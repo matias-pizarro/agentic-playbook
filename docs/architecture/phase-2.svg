@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1386" height="388" viewBox="0 0 1386 388" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
+  <defs>
+    <marker id="r92b7a457-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5c7c"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1386" height="388" fill="#111111"/>
+  <path d="M48 40 H1337.8 a8 8 0 0 1 8 8 V340 a8 8 0 0 1 -8 8 H48 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="54" y="68.4" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
+  <text x="54" y="87.4" fill="#8b8b8b" text-anchor="start">reached through the bastion's WireGuard</text>
+  <path d="M62 102 H985.8 a8 8 0 0 1 8 8 V236 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="68" y="130.4" fill="#d9d9d9" text-anchor="start">sylve-server  10.130.1.11</text>
+  <text x="68" y="149.4" fill="#8b8b8b" text-anchor="start">Sylve: jails only (no nested virtualisation on Hetzner Cloud)</text>
+  <path d="M76 164 H231 a8 8 0 0 1 8 8 V222 a8 8 0 0 1 -8 8 H76 a8 8 0 0 1 -8 -8 V172 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="153.5" y="192.4" fill="#d9d9d9" text-anchor="middle">jail: Vikunja</text>
+  <text x="153.5" y="211.4" fill="#8b8b8b" text-anchor="middle">component=vikunja</text>
+  <path d="M345.4 173.5 H559.4 a8 8 0 0 1 8 8 V212.5 a8 8 0 0 1 -8 8 H345.4 a8 8 0 0 1 -8 -8 V181.5 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="452.4" y="201.9" fill="#d9d9d9" text-anchor="middle">jail: PostgreSQL primary</text>
+  <path d="M740.8 173.5 H971.8 a8 8 0 0 1 8 8 V212.5 a8 8 0 0 1 -8 8 H740.8 a8 8 0 0 1 -8 -8 V181.5 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="856.3" y="201.9" fill="#d9d9d9" text-anchor="middle">jails: PostgreSQL replicas</text>
+  <path d="M62 268 H265 a8 8 0 0 1 8 8 V326 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V276 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
+  <text x="139.5" y="296.4" fill="#d9d9d9" text-anchor="middle">sylve-state</text>
+  <text x="139.5" y="315.4" fill="#8b8b8b" text-anchor="middle">every jail's data</text>
+  <g transform="translate(221 282) scale(1.58333)">
+    <path d="M3 6.4 v11.2 a9 3.4 0 0 0 18 0 v-11.2 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M3 6.4 a9 3.4 0 0 1 18 0 a9 3.4 0 0 1 -18 0 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
+  </g>
+  <path d="M1017.8 102 H1323.8 a8 8 0 0 1 8 8 V160 a8 8 0 0 1 -8 8 H1017.8 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
+  <text x="1170.8" y="130.4" fill="#8b8b8b" text-anchor="middle">vikunja-server  10.130.1.10</text>
+  <text x="1170.8" y="149.4" fill="#8b8b8b" text-anchor="middle">1b, removed once its data has moved</text>
+  <path d="M 567.4 197 L 732.8 197" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r92b7a457-arrow-5c5c7c)"/>
+  <rect x="598.6" y="187.5" width="103" height="19" fill="#111111"/>
+  <text x="650.1" y="201.9" fill="#d9d9d9" text-anchor="middle">replication</text>
+  <path d="M 153.5 230 L 153.5 241.2 C 153.5 247, 158.2 251.7, 164 251.7 L 424.4 251.7 C 435.45 251.7, 444.4 242.75, 444.4 231.7 L 444.4 220.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r92b7a457-arrow-5c5c7c)"/>
+  <rect x="426.4" y="226.6" width="36" height="19" fill="#111111"/>
+  <text x="444.4" y="241" fill="#d9d9d9" text-anchor="middle">SQL</text>
+  <path d="M 1170.8 168 L 1170.8 231.7 C 1170.8 242.75, 1161.85 251.7, 1150.8 251.7 L 480.4 251.7 C 469.35 251.7, 460.4 242.75, 460.4 231.7 L 460.4 220.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r92b7a457-arrow-5c5c7c)"/>
+  <rect x="1123.8" y="200.35" width="94" height="19" fill="#111111"/>
+  <text x="1170.8" y="214.75" fill="#d9d9d9" text-anchor="middle">data moves</text>
+</svg>

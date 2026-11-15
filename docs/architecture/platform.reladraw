@@ -1,0 +1,38 @@
+// The production platform: the Hetzner Cloud project agentic-workflows.
+// Built (Phase 1a) in green; intent (1b, 1c) in plain boxes.
+// WireGuard lines are dashed.
+
+default edge  line: (path: square, corners: rounded)
+
+style built   fill: theme-primary-subtle    border: theme-primary
+style intent  fill: theme-fill              border: theme-border
+style disk    fill: theme-secondary-subtle  border: theme-secondary  badge: database
+style dim     text: (color: theme-muted)
+style wg      line: (pattern: dashed)
+
+node project "Hetzner Cloud project agentic-workflows / [dim]fsn1, network zone eu-central[/dim]"
+
+node project.edge "Public side: net, Phase 1a"
+node project.edge.fw      "net-firewall / [dim]in: 22/tcp, 51820/udp, icmp[/dim]"  style: built
+node project.edge.bastion "net-bastion  10.130.0.2 / [dim]public IPv4 and IPv6[/dim] / [dim]WireGuard in, NAT out[/dim]"  style: built
+node project.edge.netdisk "net-state / [dim]WireGuard and ssh host keys[/dim]"  style: disk
+
+node project.private "net-network  10.130.0.0/16 / [dim]no public addresses[/dim] / [dim]default route via the bastion[/dim]"
+  right of project.edge  gap: 16  top level with project.edge
+node project.private.vikunja "vikunja-server  10.130.1.10 / [dim]1b, intent: Vikunja, PostgreSQL[/dim]"  style: intent
+node project.private.vdisk   "vikunja-state / [dim]encrypted datasets[/dim]"  style: disk
+node project.private.sylve   "sylve-server  10.130.1.11 / [dim]1c, intent: Sylve, jails only[/dim]"  style: intent
+node project.private.sdisk   "sylve-state"  style: disk
+
+node project.dns "zone dkl.cat, component=net / [dim]gw-net, gw-net.private,[/dim] / [dim]<component>.private[/dim]"  style: built
+  below project.edge  gap: wide  left level with project.edge
+
+node outside "Outside"  left of project  gap: 16  top level with project
+node outside.laptop "Your laptop / [dim]WireGuard peer 10.131.0.2[/dim]"
+node outside.agents "Agents' host / [dim]peer 10.131.0.3, agentic[/dim] / [dim]up for deploys only[/dim]"
+node outside.internet "Internet"  shape: circle
+
+edge outside.laptop   -> project.edge.fw       "WireGuard, ssh"  style: wg  from: right  to: left
+edge outside.agents   -> project.edge.fw       "WireGuard"       style: wg  from: right  to: left
+edge project.edge.bastion -> outside.internet  "NAT out"  from: left  to: right
+edge project.edge.bastion -> project.private   "routes"   from: right  to: left

@@ -1,0 +1,27 @@
+// Phase 2, intent: Vikunja and PostgreSQL move into jails on 1c's Sylve
+// server; the 1b server goes once its data has moved.
+
+default edge  line: (path: square, corners: rounded)
+
+style intent  fill: theme-fill              border: theme-border
+style jail    fill: theme-primary-subtle    border: theme-primary
+style disk    fill: theme-secondary-subtle  border: theme-secondary  badge: database
+style gone    fill: theme-fill              border: theme-border  text: (color: theme-muted)
+style dim     text: (color: theme-muted)
+style move    line: (pattern: dashed)
+
+node net "net-network  10.130.0.0/16 / [dim]reached through the bastion's WireGuard[/dim]"
+
+node net.sylve "sylve-server  10.130.1.11 / [dim]Sylve: jails only (no nested virtualisation on Hetzner Cloud)[/dim]"
+node net.sylve.vikunja "jail: Vikunja / [dim]component=vikunja[/dim]"  style: jail
+node net.sylve.pg1     "jail: PostgreSQL primary"  style: jail  right of net.sylve.vikunja
+node net.sylve.pg2     "jails: PostgreSQL replicas"  style: jail  right of net.sylve.pg1
+
+node net.sdisk "sylve-state / [dim]every jail's data[/dim]"  style: disk  below net.sylve  gap: tight  left level with net.sylve
+
+node net.old "vikunja-server  10.130.1.10 / [dim]1b, removed once its data has moved[/dim]"  style: gone
+  right of net.sylve  gap: 16  top level with net.sylve
+
+edge net.sylve.pg1 -> net.sylve.pg2      "replication"  from: right  to: left
+edge net.sylve.vikunja -> net.sylve.pg1  "SQL"  from: bottom  to: bottom
+edge net.old -> net.sylve.pg1  "data moves"  style: move  from: bottom  to: bottom
