@@ -4,6 +4,7 @@ Read by mkdocs-literate-nav. Paths are relative to the repo root. Every markdown
 
 - [Home](README.md)
 - [Glossary](GLOSSARY.md)
+- [Resources catalog](catalog.md)
 - Infrastructure (from src): prototypes until the production phases merge
     - imported/infra/*.md
     - imported/infra/*/

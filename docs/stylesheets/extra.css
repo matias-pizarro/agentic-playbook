@@ -1,3 +1,14 @@
+/* The catalog page (catalog.md, PP-Q23): its table is wider than the
+   content column, so that page takes the window's full width. */
+.md-grid:has(iframe.catalog) {
+  max-width: none;
+}
+iframe.catalog {
+  width: 100%;
+  height: 80vh;
+  border: none;
+}
+
 /* A section inside a tab, such as each .scratch/ feature under Issue tracker,
    gets a label in full colour and two sizes up, with room above it and a rule
    below. Material draws it in the dimmed colour, which makes it read weaker

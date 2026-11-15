@@ -4,7 +4,7 @@ How production is built and kept running: the Hetzner Cloud project `agentic-wor
 
 - **Architecture, Processes, Technical details**: written by seat `prod-architect`.
 - **Infrastructure (from src)**: the infra READMEs and `infra/CONSTANTS.md`, imported from src at the commit `docs-site/mkdocs.yml` names (`extra.src_commit`). Their code and rules live in src; each such page names its commit.
-- **Resources catalog**: to come, once Phase 1a is in production; generated from the project by src's `infra/net/catalog`.
+- **Resources catalog**: every resource in the production project, generated from the project by src's `infra/net/catalog` with the read-only token, at the same src commit; a copy taken when the site was built.
 
 The playbook names where each secret lives and never holds one.
 
@@ -14,9 +14,10 @@ Run from the repo root; each command is safe to rerun.
 
 1. `uv sync`: makes `.venv` with the site's tools.
 2. `.venv/bin/pre-commit install`: installs the hooks (gitleaks among them; needs `pkg install gitleaks`).
-3. `rm -rf imported && mkdir imported && git -C ../src archive "$(sed -n 's/^  src_commit: //p' docs-site/mkdocs.yml)" infra | tar -x -C imported --include='*.md'`: imports the infra pages at the named src commit into `imported/`, which git ignores.
-4. `uv run mkdocs build --strict -f docs-site/mkdocs.yml -d "$(git rev-parse --show-toplevel)-site"`: builds the site beside the repo, failing on any warning (`-d` resolves from the config's directory, so it is given in full).
-5. `uv run mkdocs serve -f docs-site/mkdocs.yml`: serves it at <http://127.0.0.1:8000>.
+3. `rm -rf imported && mkdir imported && git -C ../src archive "$(sed -n 's/^  src_commit: //p' docs-site/mkdocs.yml)" infra | tar -x -C imported && find imported -type f ! -name '*.md' ! -name '*.svg' -delete`: imports the infra pages and their rendered diagrams at the named src commit into `imported/`, which git ignores.
+4. `c=$(sed -n 's/^  src_commit: //p' docs-site/mkdocs.yml) && t=$(mktemp -d) && git -C ../src archive "$c" infra lib | tar -x -C "$t" && "$t/infra/net/catalog" "$t/infra/net/prod.conf" && cp ~/.local/share/agentic-workflows-prod/catalog.html imported/ && rm -rf "$t"`: regenerates the catalog with net's script at that commit (read-only token) and copies it into `imported/`.
+5. `uv run mkdocs build --strict -f docs-site/mkdocs.yml -d "$(git rev-parse --show-toplevel)-site"`: builds the site beside the repo, failing on any warning (`-d` resolves from the config's directory, so it is given in full).
+6. `uv run mkdocs serve -f docs-site/mkdocs.yml`: serves it at <http://127.0.0.1:8000>.
 
 The export `NO_MKDOCS_2_WARNING=true DISABLE_MKDOCS_2_WARNING=true` silences the MkDocs 2.0 banners, as in src.
 
