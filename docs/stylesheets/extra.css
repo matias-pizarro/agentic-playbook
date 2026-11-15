@@ -1,0 +1,11 @@
+/* A section inside a tab, such as each .scratch/ feature under Issue tracker,
+   gets a label in full colour and two sizes up, with room above it and a rule
+   below. Material draws it in the dimmed colour, which makes it read weaker
+   than its pages. */
+.md-nav__item--section .md-nav__item--section > .md-nav__link[for] {
+  color: var(--md-default-fg-color);
+  font-size: 0.85rem;
+  margin-top: 1.75em;
+  padding-bottom: 0.3em;
+  border-bottom: 0.05rem solid var(--md-default-fg-color--lighter);
+}

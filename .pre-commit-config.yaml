@@ -1,0 +1,46 @@
+default_install_hook_types:
+- pre-commit
+- commit-msg
+- pre-push
+default_stages:
+- pre-commit
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: check-added-large-files
+  - id: check-case-conflict
+  - id: check-toml
+  - id: check-yaml
+    args: ["--unsafe"]
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: local
+  hooks:
+  # The playbook names where each secret lives and never holds one (PP-Q6).
+  # A missing gitleaks fails the hook: language system reports it not found.
+  - id: gitleaks
+    name: gitleaks (staged changes)
+    entry: gitleaks git --pre-commit --staged --redact --no-banner --verbose
+    language: system
+    always_run: true
+    pass_filenames: false
+    stages:
+    - pre-commit
+  - id: gitleaks-push
+    name: gitleaks (unpushed commits)
+    entry: >-
+      sh -c 'command -v gitleaks >/dev/null ||
+      { echo "gitleaks not found: pkg install gitleaks"; exit 1; };
+      exec gitleaks git --redact --no-banner --verbose --log-opts="--diff-merges=remerge --branches --tags HEAD --not --remotes"' gitleaks-push
+    language: system
+    always_run: true
+    pass_filenames: false
+    stages:
+    - pre-push
+  - id: commitizen
+    name: commitizen
+    entry: .venv/bin/cz check --commit-msg-file
+    language: system
+    stages:
+    - commit-msg

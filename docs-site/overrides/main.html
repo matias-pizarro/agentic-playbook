@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{# Every page imported from src says which src commit it is (PP-Q7). #}
+{% block content %}
+  {% if page.file.src_uri.startswith("imported/") %}
+    <div class="admonition note">
+      <p class="admonition-title">Imported from src</p>
+      <p><code>{{ page.file.src_uri[9:] }}</code> at src commit <code>{{ config.extra.src_commit[:7] }}</code>, read when this site was built. Edit it in src, not here.</p>
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}

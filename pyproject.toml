@@ -1,0 +1,30 @@
+[project]
+name = "prod-playbook"
+version = "0.1.0"
+description = "Production playbook: architecture, processes, technical details and resources catalog of the agentic-workflows production project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-material==9.7.7",
+    "mkdocs-literate-nav",
+]
+
+[dependency-groups]
+dev = [
+    "commitizen",
+    "pre-commit",
+]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "pep440"
+version_provider = "uv"
+update_changelog_on_bump = true
+changelog_incremental = true
+annotated_tag = true
+major_version_zero = true
