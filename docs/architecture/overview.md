@@ -25,13 +25,14 @@ Every part shown is built (green); dashed lines run inside WireGuard. Phase 2 is
 - **Servers are disposable; state lives on cloud disks.** Each server's state is on its own cloud disk: rebuilding the server keeps it, and wiping it is a decision of its own (the user, 15 Nov 2026 00:55).
 - **Protected from deletion.** Every resource that Hetzner can protect is protected; production has no script that deletes, and replacing a server is the user's step (PN-Q3).
 - **Owned by components, not by agents.** A resource carries `component=<component>` and a name starting `<component>-`, so it stays maintainable after the agent that built it is gone (PA-Q12).
+- **Peers routed, not translated.** A private server sees which WireGuard peer it talks to, so the image's ssh rate limit locks out only the peer that trips it, not every peer at once; no route of the peers' own is needed, the network's default route through the bastion carries their replies (PA-Q49, PN-Q35).
 - **Fixed addresses and names.** Each server has a fixed address and a name under `private.dkl.cat`, from one table in [CONSTANTS.md](../../imported/infra/CONSTANTS.md) (PA-Q20).
 
 ## How a deploy reaches a server
 
 ![How a deploy and a web UI reach a private server](deploy-flow.svg)
 
-The agents' jail shares the host's network but cannot send from a tunnel address, so the host's pf rewrites its traffic to the agents' peer, 10.131.0.3; the bastion forwards a peer's traffic into the network from its own private address. The user brings the agents' tunnel up for a deploy and down after. The steps: [Deploying a component](../processes/deploy-a-component.md).
+The agents' jail shares the host's network but cannot send from a tunnel address, so the host's pf rewrites its traffic to the agents' peer, 10.131.0.3; the bastion routes a peer's traffic into the network untranslated, so a server sees the peer's own address, and the network's default route, via the bastion, carries the replies back ([CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Deploys into the private network"). The user brings the agents' tunnel up for a deploy and down after. The steps: [Deploying a component](../processes/deploy-a-component.md).
 
 ## Phases: built and intent
 
