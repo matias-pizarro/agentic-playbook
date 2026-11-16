@@ -1,5 +1,5 @@
 // The production platform: the Hetzner Cloud project agentic-workflows.
-// Built (Phase 1a) in green; intent (1b, 1c) in plain boxes.
+// Built (1a, 1b, 1c) in green; Phase 2 is in phase-2.reladraw.
 // WireGuard lines are dashed.
 
 default edge  line: (path: square, corners: rounded)
@@ -19,9 +19,9 @@ node project.edge.netdisk "net-state / [dim]WireGuard and ssh host keys[/dim]"  
 
 node project.private "net-network  10.130.0.0/16 / [dim]no public addresses[/dim] / [dim]default route via the bastion[/dim]"
   right of project.edge  gap: 16  top level with project.edge
-node project.private.vikunja "vikunja-server  10.130.1.10 / [dim]1b, intent: Vikunja, PostgreSQL[/dim]"  style: intent
+node project.private.vikunja "vikunja-server  10.130.1.10 / [dim]1b: Vikunja, PostgreSQL[/dim]"  style: built
 node project.private.vdisk   "vikunja-state / [dim]encrypted datasets[/dim]"  style: disk
-node project.private.sylve   "sylve-server  10.130.1.11 / [dim]1c, intent: Sylve, jails only[/dim]"  style: intent
+node project.private.sylve   "sylve-server  10.130.1.11 / [dim]1c: Sylve, jails only[/dim]"  style: built
 node project.private.sdisk   "sylve-state"  style: disk
 
 node project.dns "zone dkl.cat, component=net / [dim]gw-net, gw-net.private,[/dim] / [dim]<component>.private[/dim]"  style: built

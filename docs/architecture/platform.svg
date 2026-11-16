@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1199" height="645" viewBox="0 0 1199 645" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
+<svg xmlns="http://www.w3.org/2000/svg" width="1165" height="645" viewBox="0 0 1165 645" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
   <defs>
-    <marker id="r00ea4d7d-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="r8b2b56c4-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5c7c"/>
     </marker>
   </defs>
-  <rect x="0" y="0" width="1199" height="645" fill="#111111"/>
-  <path d="M462.4 40 H1150.8 a8 8 0 0 1 8 8 V597 a8 8 0 0 1 -8 8 H462.4 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <rect x="0" y="0" width="1165" height="645" fill="#111111"/>
+  <path d="M462.4 40 H1116.8 a8 8 0 0 1 8 8 V597 a8 8 0 0 1 -8 8 H462.4 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
   <text x="468.4" y="68.4" fill="#d9d9d9" text-anchor="start">Hetzner Cloud project agentic-workflows</text>
   <text x="468.4" y="87.4" fill="#8b8b8b" text-anchor="start">fsn1, network zone eu-central</text>
   <path d="M476.4 102 H791.4 a8 8 0 0 1 8 8 V388 a8 8 0 0 1 -8 8 H476.4 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
@@ -26,13 +26,13 @@
     <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
   </g>
-  <path d="M835.8 102 H1136.8 a8 8 0 0 1 8 8 V483 a8 8 0 0 1 -8 8 H835.8 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <path d="M835.8 102 H1102.8 a8 8 0 0 1 8 8 V483 a8 8 0 0 1 -8 8 H835.8 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
   <text x="841.8" y="130.4" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
   <text x="841.8" y="149.4" fill="#8b8b8b" text-anchor="start">no public addresses</text>
   <text x="841.8" y="168.4" fill="#8b8b8b" text-anchor="start">default route via the bastion</text>
-  <path d="M849.8 183 H1122.8 a8 8 0 0 1 8 8 V241 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V191 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="986.3" y="211.4" fill="#d9d9d9" text-anchor="middle">vikunja-server  10.130.1.10</text>
-  <text x="986.3" y="230.4" fill="#8b8b8b" text-anchor="middle">1b, intent: Vikunja, PostgreSQL</text>
+  <path d="M849.8 183 H1088.8 a8 8 0 0 1 8 8 V241 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V191 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="969.3" y="211.4" fill="#d9d9d9" text-anchor="middle">vikunja-server  10.130.1.10</text>
+  <text x="969.3" y="230.4" fill="#8b8b8b" text-anchor="middle">1b: Vikunja, PostgreSQL</text>
   <path d="M849.8 259 H1061.8 a8 8 0 0 1 8 8 V317 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V267 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
   <text x="931.8" y="287.4" fill="#d9d9d9" text-anchor="middle">vikunja-state</text>
   <text x="931.8" y="306.4" fill="#8b8b8b" text-anchor="middle">encrypted datasets</text>
@@ -42,9 +42,9 @@
     <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
   </g>
-  <path d="M849.8 335 H1105.8 a8 8 0 0 1 8 8 V393 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V343 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="977.8" y="363.4" fill="#d9d9d9" text-anchor="middle">sylve-server  10.130.1.11</text>
-  <text x="977.8" y="382.4" fill="#8b8b8b" text-anchor="middle">1c, intent: Sylve, jails only</text>
+  <path d="M849.8 335 H1071.8 a8 8 0 0 1 8 8 V393 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V343 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="960.8" y="363.4" fill="#d9d9d9" text-anchor="middle">sylve-server  10.130.1.11</text>
+  <text x="960.8" y="382.4" fill="#8b8b8b" text-anchor="middle">1c: Sylve, jails only</text>
   <path d="M849.8 411 H1002.8 a8 8 0 0 1 8 8 V469 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V419 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
   <text x="902.3" y="448.9" fill="#d9d9d9" text-anchor="middle">sylve-state</text>
   <g transform="translate(958.8 425) scale(1.58333)">
@@ -68,16 +68,16 @@
   <text x="169" y="225.4" fill="#8b8b8b" text-anchor="middle">up for deploys only</text>
   <path d="M54 303.3 a49.3 49.3 0 1 0 98.6 0 a49.3 49.3 0 1 0 -98.6 0 Z" fill="#191728" stroke="#4f5367"/>
   <text x="103.3" y="308.2" fill="#d9d9d9" text-anchor="middle">Internet</text>
-  <path d="M 292 116 L 367.2 116 C 378.25 116, 387.2 124.95, 387.2 136 L 387.2 150 C 387.2 161.05, 396.15 170, 407.2 170 L 482.4 170" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r00ea4d7d-arrow-5c5c7c)"/>
+  <path d="M 292 116 L 367.2 116 C 378.25 116, 387.2 124.95, 387.2 136 L 387.2 150 C 387.2 161.05, 396.15 170, 407.2 170 L 482.4 170" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
   <rect x="275.6" y="106.5" width="128" height="19" fill="#111111"/>
   <text x="339.6" y="120.9" fill="#d9d9d9" text-anchor="middle">WireGuard, ssh</text>
-  <path d="M 284 201.5 L 375.45 201.5 C 379.73 201.5, 383.2 198.03, 383.2 193.75 L 383.2 193.75 C 383.2 189.47, 386.67 186, 390.95 186 L 482.4 186" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r00ea4d7d-arrow-5c5c7c)"/>
+  <path d="M 284 201.5 L 375.45 201.5 C 379.73 201.5, 383.2 198.03, 383.2 193.75 L 383.2 193.75 C 383.2 189.47, 386.67 186, 390.95 186 L 482.4 186" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
   <rect x="290.6" y="192" width="86" height="19" fill="#111111"/>
   <text x="333.6" y="206.4" fill="#d9d9d9" text-anchor="middle">WireGuard</text>
-  <path d="M 482.4 263.5 L 337.4 263.5 C 326.41 263.5, 317.5 272.41, 317.5 283.4 L 317.5 283.4 C 317.5 294.39, 308.59 303.3, 297.6 303.3 L 152.6 303.3" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r00ea4d7d-arrow-5c5c7c)"/>
+  <path d="M 482.4 263.5 L 337.4 263.5 C 326.41 263.5, 317.5 272.41, 317.5 283.4 L 317.5 283.4 C 317.5 294.39, 308.59 303.3, 297.6 303.3 L 152.6 303.3" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
   <rect x="365.45" y="254" width="69" height="19" fill="#111111"/>
   <text x="399.95" y="268.4" fill="#d9d9d9" text-anchor="middle">NAT out</text>
-  <path d="M 704.4 263.5 L 749.6 263.5 C 758.71 263.5, 766.1 270.89, 766.1 280 L 766.1 280 C 766.1 289.11, 773.49 296.5, 782.6 296.5 L 827.8 296.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r00ea4d7d-arrow-5c5c7c)"/>
+  <path d="M 704.4 263.5 L 749.6 263.5 C 758.71 263.5, 766.1 270.89, 766.1 280 L 766.1 280 C 766.1 289.11, 773.49 296.5, 782.6 296.5 L 827.8 296.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
   <rect x="704.75" y="254" width="61" height="19" fill="#111111"/>
   <text x="735.25" y="268.4" fill="#d9d9d9" text-anchor="middle">routes</text>
 </svg>
