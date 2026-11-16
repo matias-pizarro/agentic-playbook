@@ -26,7 +26,7 @@ Production's shared rules (components, `component=` labels, names, addresses, de
 - PP-Q22, "yes" (23:33): the render (home and an imported page) is right; the site is committed to `main`.
 - PP-Q23, the user, "B" (16 Nov, before 00:03): the catalog is shown inside the playbook's frame, a page `catalog.md` holding net's HTML in a full-width iframe, with a link to it on its own page.
 - PP-Q24, "yes" (with PP-Q23): the catalog page and src at ec6c118 are committed.
-- PP-Q25 (the framed render): rehearsal assumption, committed on the recommended "yes" under the overnight rehearsal (the user, 16 Nov 00:27, relayed by the lead; wiki decision-overnight-rehearsal.md, guardrail 4); for the user to confirm.
+- PP-Q25, the user, "yes" (16 Nov 14:41): the framed catalog page as committed (2166156) stays, full-width with no side navigation; it was committed first as a rehearsal assumption under the overnight rehearsal (guardrail 4).
 - PP-Q11, "yes" (22:33): `main` plus `feat/<topic>` branches in each writer's own worktree; only prod-playbook merges, `--no-ff`, after a `--strict` build passes on the branch, flagging to the lead a file both branches changed; the lead relays phase merges and deploys to whichever of the two owns the part affected.
 - PP-Q12, "yes" (22:33): the rw token `agentic-workflows-prod-rw.token` while it exists, else the user makes one for the window and deletes it after.
 - PP-Q13, the user, "yes, but name should be Production playbook" (22:33): src's MkDocs setup (`pyproject.toml` with `mkdocs-material==9.7.7` and `mkdocs-literate-nav` under `uv`, `docs-site/` with `mkdocs.yml` and `nav.md`, the repo as the site, the same theme and extensions, `--strict`, commitizen and pre-commit with gitleaks); `site_name: Production playbook`.
