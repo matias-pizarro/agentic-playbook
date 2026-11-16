@@ -6,7 +6,7 @@ Ceremony: checklist (the user, "PA-Q31,32,34,35,36,37,38,39,40: yes", 15 Nov 202
 
 **Blocked by:** None
 
-**Status:** in-progress
+**Status:** done (merged into main ba877b2; 1b and 1c shown built, 750eb80)
 
 ## Commands
 
