@@ -11,7 +11,7 @@ Read by mkdocs-literate-nav. Paths are relative to the repo root. Every markdown
     - [Deploying a component](docs/processes/deploy-a-component.md)
     - [Changing a standard](docs/processes/change-a-standard.md)
 - [Resources catalog](catalog.md)
-- Infrastructure (from src): prototypes until the production phases merge
+- Infrastructure (from src)
     - imported/infra/*.md
     - imported/infra/*/
 - Issue tracker
