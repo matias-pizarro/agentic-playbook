@@ -10,6 +10,7 @@ Read by mkdocs-literate-nav. Paths are relative to the repo root. Every markdown
 - Processes
     - [Deploying a component](docs/processes/deploy-a-component.md)
     - [Changing a standard](docs/processes/change-a-standard.md)
+    - [Work items in Vikunja](docs/processes/work-items-in-vikunja.md)
 - [Resources catalog](catalog.md)
 - Infrastructure (from src)
     - imported/infra/*.md
