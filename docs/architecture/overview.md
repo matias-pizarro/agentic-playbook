@@ -15,12 +15,12 @@ Production is one Hetzner Cloud project, `agentic-workflows`, in Falkenstein (`f
 
 ![The production platform](platform.svg)
 
-Every part shown is built (green); dashed lines run inside WireGuard. Phase 2 is below.
+Every part shown is built (green); dashed lines run inside WireGuard. The agents have two peers: `agentic` (10.131.0.3), up for deploys only, and `vikunja-agents` (10.131.0.4), always up and held by the bastion to Vikunja's server, for the agents' HTTPS and MCP access. Phase 2 is below.
 
 ## Why this shape
 
 - **One way in, one way out.** Servers on the private network have no public address. The bastion is the network's gateway to the internet (NAT out) and, through WireGuard, the only way in; the firewall in front of it lets in ssh, WireGuard and ICMP only. Few doors, each watched: the user's plan for Phase 1a (14 Nov 2026).
-- **No web port on the internet.** Every web UI, Vikunja's and Sylve's, listens on the server's loopback and is reached through an ssh tunnel ([CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Exposure"). One exception, decided and being built: port 80 on the bastion, where Caddy answers only Let's Encrypt's challenges for `vikunja.dkl.cat` and proxies nothing, so that Vikunja can be served over TLS on the private network; it stays open until a certificate service opens it only around a renewal (VW-Q8).
+- **No web port on the internet.** Every web UI, Vikunja's and Sylve's, listens on the server's loopback and is reached through an ssh tunnel ([CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Exposure"). One exception, built on 17 Nov 2026: port 80 on the bastion, where Caddy answers only Let's Encrypt's challenges for `vikunja.dkl.cat` and proxies nothing, so that Vikunja is served over TLS on the private network, by hitch on 10.130.1.10:443, to two peers only; it stays open until a certificate service opens it only around a renewal (VW-Q8). The user copies each renewed certificate to Vikunja's server: [Renewing Vikunja's certificate](../processes/renew-vikunja-certificate.md).
 - **Deploys go through WireGuard too.** Agents deploy from their own peer, not by ssh forwarded through the bastion, so the bastion holds no component's key (PA-Q23, PA-Q41).
 - **Servers are disposable; state lives on cloud disks.** Each server's state is on its own cloud disk: rebuilding the server keeps it, and wiping it is a decision of its own (the user, 15 Nov 2026 00:55).
 - **Protected from deletion.** Every resource that Hetzner can protect is protected; production has no script that deletes, and replacing a server is the user's step (PN-Q3).
@@ -38,13 +38,13 @@ The agents' jail shares the host's network but cannot send from a tunnel address
 
 Written ahead as a plan (PA-Q33); each part is kept current as it is built, and the component's README replaces it once built.
 
-- **1b, `vikunja`, built**: deployed and checked on 16 Nov 2026, 00:37–00:47, in the overnight rehearsal, as planned: Vikunja and PostgreSQL on one server, 10.130.1.10, `vikunja.private.dkl.cat`; Vikunja on 127.0.0.1:3456 through an ssh tunnel; registration closed, no mail, no OIDC; its data on encrypted datasets of an unencrypted pool on `vikunja-state` (PV-Q1 to PV-Q5). Its README in src, under Infrastructure once imported, describes it as built; the redeploy with fresh keys comes after the rehearsal.
+- **1b, `vikunja`, built**: deployed and checked on 16 Nov 2026, 00:37–00:47, in the overnight rehearsal, as planned: Vikunja and PostgreSQL on one server, 10.130.1.10, `vikunja.private.dkl.cat`; Vikunja on 127.0.0.1:3456 through an ssh tunnel, and since 17 Nov at `https://vikunja.dkl.cat/` through hitch, with an audit log of every change to a work item in PostgreSQL (vikunja-workflow tickets 04 and 05); registration closed, no mail, no OIDC; its data on encrypted datasets of an unencrypted pool on `vikunja-state` (PV-Q1 to PV-Q5). Its README in src, under Infrastructure once imported, describes it as built; the redeploy with fresh keys comes after the rehearsal.
 - **1c, `sylve`, built**: deployed and checked on 16 Nov 2026, 00:54–01:08, in the overnight rehearsal: Sylve on one server, 10.130.1.11, `sylve.private.dkl.cat`, its state on encrypted datasets of the pool `sylvestate` on `sylve-state`; its README in src describes it as built. Jails only: Hetzner Cloud offers no nested virtualisation, so Sylve runs no VMs there (tested 15 Nov 2026). Its details are being settled in prod-sylve's grilling.
 - **Phase 2**: Vikunja, and PostgreSQL as a primary with replicas, move into jails on the Sylve server; the 1b server goes once its data has moved.
 
 ![Phase 2](phase-2.svg)
 
-- **Phase 3**: registration, mail, OIDC, TLS and a proxy. **Phase 4**: an admin dashboard (PV-Q1).
+- **Phase 3**: registration, mail, OIDC and a proxy; TLS for Vikunja came earlier (VW-Q8). **Phase 4**: an admin dashboard (PV-Q1).
 
 ## What stays the user's
 

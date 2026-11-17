@@ -1,83 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1165" height="645" viewBox="0 0 1165 645" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
+<svg xmlns="http://www.w3.org/2000/svg" width="1506" height="702" viewBox="0 0 1506 702" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
   <defs>
-    <marker id="r8b2b56c4-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="r724c613c-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5c7c"/>
     </marker>
   </defs>
-  <rect x="0" y="0" width="1165" height="645" fill="#111111"/>
-  <path d="M462.4 40 H1116.8 a8 8 0 0 1 8 8 V597 a8 8 0 0 1 -8 8 H462.4 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
-  <text x="468.4" y="68.4" fill="#d9d9d9" text-anchor="start">Hetzner Cloud project agentic-workflows</text>
-  <text x="468.4" y="87.4" fill="#8b8b8b" text-anchor="start">fsn1, network zone eu-central</text>
-  <path d="M476.4 102 H791.4 a8 8 0 0 1 8 8 V388 a8 8 0 0 1 -8 8 H476.4 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
-  <text x="482.4" y="130.4" fill="#d9d9d9" text-anchor="start">Public side: net, Phase 1a</text>
-  <path d="M490.4 145 H729.4 a8 8 0 0 1 8 8 V203 a8 8 0 0 1 -8 8 H490.4 a8 8 0 0 1 -8 -8 V153 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="609.9" y="173.4" fill="#d9d9d9" text-anchor="middle">net-firewall</text>
-  <text x="609.9" y="192.4" fill="#8b8b8b" text-anchor="middle">in: 22/tcp, 51820/udp, icmp</text>
-  <path d="M490.4 221 H696.4 a8 8 0 0 1 8 8 V298 a8 8 0 0 1 -8 8 H490.4 a8 8 0 0 1 -8 -8 V229 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="593.4" y="249.4" fill="#d9d9d9" text-anchor="middle">net-bastion  10.130.0.2</text>
-  <text x="593.4" y="268.4" fill="#8b8b8b" text-anchor="middle">public IPv4 and IPv6</text>
-  <text x="593.4" y="287.4" fill="#8b8b8b" text-anchor="middle">WireGuard in, NAT out</text>
-  <path d="M490.4 316 H777.4 a8 8 0 0 1 8 8 V374 a8 8 0 0 1 -8 8 H490.4 a8 8 0 0 1 -8 -8 V324 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
-  <text x="609.9" y="344.4" fill="#d9d9d9" text-anchor="middle">net-state</text>
-  <text x="609.9" y="363.4" fill="#8b8b8b" text-anchor="middle">WireGuard and ssh host keys</text>
-  <g transform="translate(733.4 330) scale(1.58333)">
+  <rect x="0" y="0" width="1506" height="702" fill="#111111"/>
+  <path d="M585.4 40 H1457.8 a8 8 0 0 1 8 8 V654 a8 8 0 0 1 -8 8 H585.4 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="591.4" y="68.4" fill="#d9d9d9" text-anchor="start">Hetzner Cloud project agentic-workflows</text>
+  <text x="591.4" y="87.4" fill="#8b8b8b" text-anchor="start">fsn1, network zone eu-central</text>
+  <path d="M599.4 102 H984.4 a8 8 0 0 1 8 8 V426 a8 8 0 0 1 -8 8 H599.4 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="605.4" y="130.4" fill="#d9d9d9" text-anchor="start">Public side: net, Phase 1a</text>
+  <path d="M613.4 145 H919.4 a8 8 0 0 1 8 8 V203 a8 8 0 0 1 -8 8 H613.4 a8 8 0 0 1 -8 -8 V153 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="766.4" y="173.4" fill="#d9d9d9" text-anchor="middle">net-firewall</text>
+  <text x="766.4" y="192.4" fill="#8b8b8b" text-anchor="middle">in: 22/tcp, 80/tcp, 51820/udp, icmp</text>
+  <path d="M613.4 221 H970.4 a8 8 0 0 1 8 8 V317 a8 8 0 0 1 -8 8 H613.4 a8 8 0 0 1 -8 -8 V229 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="791.9" y="249.4" fill="#d9d9d9" text-anchor="middle">net-bastion  10.130.0.2</text>
+  <text x="791.9" y="268.4" fill="#8b8b8b" text-anchor="middle">public IPv4 and IPv6</text>
+  <text x="791.9" y="287.4" fill="#8b8b8b" text-anchor="middle">WireGuard in, NAT out</text>
+  <text x="791.9" y="306.4" fill="#8b8b8b" text-anchor="middle">Caddy :80: ACME only, for vikunja.dkl.cat</text>
+  <path d="M613.4 335 H934.4 a8 8 0 0 1 8 8 V412 a8 8 0 0 1 -8 8 H613.4 a8 8 0 0 1 -8 -8 V343 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
+  <text x="749.9" y="363.4" fill="#d9d9d9" text-anchor="middle">net-state</text>
+  <text x="749.9" y="382.4" fill="#8b8b8b" text-anchor="middle">WireGuard and ssh host keys,</text>
+  <text x="749.9" y="401.4" fill="#8b8b8b" text-anchor="middle">Caddy's certificate (encrypted)</text>
+  <g transform="translate(890.4 358.5) scale(1.58333)">
     <path d="M3 6.4 v11.2 a9 3.4 0 0 0 18 0 v-11.2 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 6.4 a9 3.4 0 0 1 18 0 a9 3.4 0 0 1 -18 0 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
   </g>
-  <path d="M835.8 102 H1102.8 a8 8 0 0 1 8 8 V483 a8 8 0 0 1 -8 8 H835.8 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
-  <text x="841.8" y="130.4" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
-  <text x="841.8" y="149.4" fill="#8b8b8b" text-anchor="start">no public addresses</text>
-  <text x="841.8" y="168.4" fill="#8b8b8b" text-anchor="start">default route via the bastion</text>
-  <path d="M849.8 183 H1088.8 a8 8 0 0 1 8 8 V241 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V191 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="969.3" y="211.4" fill="#d9d9d9" text-anchor="middle">vikunja-server  10.130.1.10</text>
-  <text x="969.3" y="230.4" fill="#8b8b8b" text-anchor="middle">1b: Vikunja, PostgreSQL</text>
-  <path d="M849.8 259 H1061.8 a8 8 0 0 1 8 8 V317 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V267 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
-  <text x="931.8" y="287.4" fill="#d9d9d9" text-anchor="middle">vikunja-state</text>
-  <text x="931.8" y="306.4" fill="#8b8b8b" text-anchor="middle">encrypted datasets</text>
-  <g transform="translate(1017.8 273) scale(1.58333)">
+  <path d="M1109.8 102 H1443.8 a8 8 0 0 1 8 8 V521 a8 8 0 0 1 -8 8 H1109.8 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="1115.8" y="130.4" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
+  <text x="1115.8" y="149.4" fill="#8b8b8b" text-anchor="start">no public addresses</text>
+  <text x="1115.8" y="168.4" fill="#8b8b8b" text-anchor="start">default route via the bastion</text>
+  <path d="M1123.8 183 H1429.8 a8 8 0 0 1 8 8 V279 a8 8 0 0 1 -8 8 H1123.8 a8 8 0 0 1 -8 -8 V191 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="1276.8" y="211.4" fill="#d9d9d9" text-anchor="middle">vikunja-server  10.130.1.10</text>
+  <text x="1276.8" y="230.4" fill="#8b8b8b" text-anchor="middle">1b: Vikunja, PostgreSQL, audit log</text>
+  <text x="1276.8" y="249.4" fill="#8b8b8b" text-anchor="middle">hitch :443, https://vikunja.dkl.cat</text>
+  <text x="1276.8" y="268.4" fill="#8b8b8b" text-anchor="middle">from 10.131.0.2 and .4 only</text>
+  <path d="M1123.8 297 H1335.8 a8 8 0 0 1 8 8 V355 a8 8 0 0 1 -8 8 H1123.8 a8 8 0 0 1 -8 -8 V305 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
+  <text x="1205.8" y="325.4" fill="#d9d9d9" text-anchor="middle">vikunja-state</text>
+  <text x="1205.8" y="344.4" fill="#8b8b8b" text-anchor="middle">encrypted datasets</text>
+  <g transform="translate(1291.8 311) scale(1.58333)">
     <path d="M3 6.4 v11.2 a9 3.4 0 0 0 18 0 v-11.2 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 6.4 a9 3.4 0 0 1 18 0 a9 3.4 0 0 1 -18 0 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
   </g>
-  <path d="M849.8 335 H1071.8 a8 8 0 0 1 8 8 V393 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V343 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="960.8" y="363.4" fill="#d9d9d9" text-anchor="middle">sylve-server  10.130.1.11</text>
-  <text x="960.8" y="382.4" fill="#8b8b8b" text-anchor="middle">1c: Sylve, jails only</text>
-  <path d="M849.8 411 H1002.8 a8 8 0 0 1 8 8 V469 a8 8 0 0 1 -8 8 H849.8 a8 8 0 0 1 -8 -8 V419 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
-  <text x="902.3" y="448.9" fill="#d9d9d9" text-anchor="middle">sylve-state</text>
-  <g transform="translate(958.8 425) scale(1.58333)">
+  <path d="M1123.8 373 H1345.8 a8 8 0 0 1 8 8 V431 a8 8 0 0 1 -8 8 H1123.8 a8 8 0 0 1 -8 -8 V381 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="1234.8" y="401.4" fill="#d9d9d9" text-anchor="middle">sylve-server  10.130.1.11</text>
+  <text x="1234.8" y="420.4" fill="#8b8b8b" text-anchor="middle">1c: Sylve, jails only</text>
+  <path d="M1123.8 449 H1276.8 a8 8 0 0 1 8 8 V507 a8 8 0 0 1 -8 8 H1123.8 a8 8 0 0 1 -8 -8 V457 a8 8 0 0 1 8 -8 Z" fill="#460000" stroke="#8f3a3a"/>
+  <text x="1176.3" y="486.9" fill="#d9d9d9" text-anchor="middle">sylve-state</text>
+  <g transform="translate(1232.8 463) scale(1.58333)">
     <path d="M3 6.4 v11.2 a9 3.4 0 0 0 18 0 v-11.2 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 6.4 a9 3.4 0 0 1 18 0 a9 3.4 0 0 1 -18 0 Z" fill="#3e3d58" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 11 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
     <path d="M3 15.6 a9 3.4 0 0 0 18 0" fill="none" stroke="#8d8d8e" stroke-width="1.1" stroke-linejoin="round"/>
   </g>
-  <path d="M476.4 506 H715.4 a8 8 0 0 1 8 8 V583 a8 8 0 0 1 -8 8 H476.4 a8 8 0 0 1 -8 -8 V514 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="595.9" y="534.4" fill="#d9d9d9" text-anchor="middle">zone dkl.cat, component=net</text>
-  <text x="595.9" y="553.4" fill="#8b8b8b" text-anchor="middle">gw-net, gw-net.private,</text>
-  <text x="595.9" y="572.4" fill="#8b8b8b" text-anchor="middle">&lt;component&gt;.private</text>
-  <path d="M48 40 H298 a8 8 0 0 1 8 8 V358.6 a8 8 0 0 1 -8 8 H48 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
-  <text x="54" y="68.4" fill="#d9d9d9" text-anchor="start">Outside</text>
-  <path d="M62 83 H284 a8 8 0 0 1 8 8 V141 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V91 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="173" y="111.4" fill="#d9d9d9" text-anchor="middle">Your laptop</text>
-  <text x="173" y="130.4" fill="#8b8b8b" text-anchor="middle">WireGuard peer 10.131.0.2</text>
-  <path d="M62 159 H276 a8 8 0 0 1 8 8 V236 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V167 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="169" y="187.4" fill="#d9d9d9" text-anchor="middle">Agents' host</text>
-  <text x="169" y="206.4" fill="#8b8b8b" text-anchor="middle">peer 10.131.0.3, agentic</text>
-  <text x="169" y="225.4" fill="#8b8b8b" text-anchor="middle">up for deploys only</text>
-  <path d="M54 303.3 a49.3 49.3 0 1 0 98.6 0 a49.3 49.3 0 1 0 -98.6 0 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="103.3" y="308.2" fill="#d9d9d9" text-anchor="middle">Internet</text>
-  <path d="M 292 116 L 367.2 116 C 378.25 116, 387.2 124.95, 387.2 136 L 387.2 150 C 387.2 161.05, 396.15 170, 407.2 170 L 482.4 170" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
-  <rect x="275.6" y="106.5" width="128" height="19" fill="#111111"/>
-  <text x="339.6" y="120.9" fill="#d9d9d9" text-anchor="middle">WireGuard, ssh</text>
-  <path d="M 284 201.5 L 375.45 201.5 C 379.73 201.5, 383.2 198.03, 383.2 193.75 L 383.2 193.75 C 383.2 189.47, 386.67 186, 390.95 186 L 482.4 186" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
-  <rect x="290.6" y="192" width="86" height="19" fill="#111111"/>
-  <text x="333.6" y="206.4" fill="#d9d9d9" text-anchor="middle">WireGuard</text>
-  <path d="M 482.4 263.5 L 337.4 263.5 C 326.41 263.5, 317.5 272.41, 317.5 283.4 L 317.5 283.4 C 317.5 294.39, 308.59 303.3, 297.6 303.3 L 152.6 303.3" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
-  <rect x="365.45" y="254" width="69" height="19" fill="#111111"/>
-  <text x="399.95" y="268.4" fill="#d9d9d9" text-anchor="middle">NAT out</text>
-  <path d="M 704.4 263.5 L 749.6 263.5 C 758.71 263.5, 766.1 270.89, 766.1 280 L 766.1 280 C 766.1 289.11, 773.49 296.5, 782.6 296.5 L 827.8 296.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r8b2b56c4-arrow-5c5c7c)"/>
-  <rect x="704.75" y="254" width="61" height="19" fill="#111111"/>
-  <text x="735.25" y="268.4" fill="#d9d9d9" text-anchor="middle">routes</text>
+  <path d="M599.4 544 H838.4 a8 8 0 0 1 8 8 V640 a8 8 0 0 1 -8 8 H599.4 a8 8 0 0 1 -8 -8 V552 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
+  <text x="718.9" y="572.4" fill="#d9d9d9" text-anchor="middle">zone dkl.cat, component=net</text>
+  <text x="718.9" y="591.4" fill="#8b8b8b" text-anchor="middle">gw-net, gw-net.private,</text>
+  <text x="718.9" y="610.4" fill="#8b8b8b" text-anchor="middle">&lt;component&gt;.private,</text>
+  <text x="718.9" y="629.4" fill="#8b8b8b" text-anchor="middle">vikunja (A, for Caddy)</text>
+  <path d="M48 40 H357 a8 8 0 0 1 8 8 V364 a8 8 0 0 1 -8 8 H48 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#191920" stroke="#25242f"/>
+  <text x="54" y="68.4" fill="#d9d9d9" text-anchor="start">WireGuard peers</text>
+  <path d="M62 83 H268 a8 8 0 0 1 8 8 V160 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V91 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
+  <text x="165" y="111.4" fill="#d9d9d9" text-anchor="middle">Your laptop  10.131.0.2</text>
+  <text x="165" y="130.4" fill="#8b8b8b" text-anchor="middle">ssh to every server;</text>
+  <text x="165" y="149.4" fill="#8b8b8b" text-anchor="middle">https to Vikunja</text>
+  <path d="M62 178 H301 a8 8 0 0 1 8 8 V255 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V186 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
+  <text x="181.5" y="206.4" fill="#d9d9d9" text-anchor="middle">Agents' host  10.131.0.3</text>
+  <text x="181.5" y="225.4" fill="#8b8b8b" text-anchor="middle">interface agentic, deploys:</text>
+  <text x="181.5" y="244.4" fill="#8b8b8b" text-anchor="middle">ssh; up for deploys only</text>
+  <path d="M62 273 H343 a8 8 0 0 1 8 8 V350 a8 8 0 0 1 -8 8 H62 a8 8 0 0 1 -8 -8 V281 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
+  <text x="202.5" y="301.4" fill="#d9d9d9" text-anchor="middle">Agents' Vikunja peer  10.131.0.4</text>
+  <text x="202.5" y="320.4" fill="#8b8b8b" text-anchor="middle">always up, held to 10.130.1.10:</text>
+  <text x="202.5" y="339.4" fill="#8b8b8b" text-anchor="middle">https and MCP to Vikunja</text>
+  <path d="M40 554.19 a72.19 72.19 0 1 0 144.38 0 a72.19 72.19 0 1 0 -144.38 0 Z" fill="#191728" stroke="#4f5367"/>
+  <text x="112.19" y="549.59" fill="#d9d9d9" text-anchor="middle">Internet</text>
+  <text x="112.19" y="568.59" fill="#8b8b8b" text-anchor="middle">Let's Encrypt</text>
+  <path d="M 365 206 L 471.2 206 C 478.93 206, 485.2 199.73, 485.2 192 L 485.2 192 C 485.2 184.27, 491.47 178, 499.2 178 L 605.4 178" fill="none" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="6.4 4.8" marker-end="url(#r724c613c-arrow-5c5c7c)"/>
+  <rect x="336.1" y="196.5" width="178" height="19" fill="#111111"/>
+  <text x="425.1" y="210.9" fill="#d9d9d9" text-anchor="middle">WireGuard, 51820/udp</text>
+  <path d="M 184.38 554.19 L 374.89 554.19 C 385.94 554.19, 394.89 545.24, 394.89 534.19 L 394.89 293 C 394.89 281.95, 403.84 273, 414.89 273 L 605.4 273" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r724c613c-arrow-5c5c7c)" marker-start="url(#r724c613c-arrow-5c5c7c)"/>
+  <rect x="292.89" y="404.09" width="204" height="19" fill="#111111"/>
+  <text x="394.89" y="418.49" fill="#d9d9d9" text-anchor="middle">NAT out; ACME in on :80</text>
+  <path d="M 978.4 273 L 1020.1 273 C 1031.15 273, 1040.1 281.95, 1040.1 293 L 1040.1 295.5 C 1040.1 306.55, 1049.05 315.5, 1060.1 315.5 L 1101.8 315.5" fill="none" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r724c613c-arrow-5c5c7c)"/>
+  <rect x="978.75" y="263.5" width="61" height="19" fill="#111111"/>
+  <text x="1009.25" y="277.9" fill="#d9d9d9" text-anchor="middle">routes</text>
 </svg>
