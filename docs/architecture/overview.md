@@ -20,7 +20,7 @@ Every part shown is built (green); dashed lines run inside WireGuard. Phase 2 is
 ## Why this shape
 
 - **One way in, one way out.** Servers on the private network have no public address. The bastion is the network's gateway to the internet (NAT out) and, through WireGuard, the only way in; the firewall in front of it lets in ssh, WireGuard and ICMP only. Few doors, each watched: the user's plan for Phase 1a (14 Nov 2026).
-- **No web port on the internet.** Every web UI, Vikunja's and Sylve's, listens on the server's loopback and is reached through an ssh tunnel ([CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Exposure").
+- **No web port on the internet.** Every web UI, Vikunja's and Sylve's, listens on the server's loopback and is reached through an ssh tunnel ([CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Exposure"). One exception, decided and being built: port 80 on the bastion, where Caddy answers only Let's Encrypt's challenges for `vikunja.dkl.cat` and proxies nothing, so that Vikunja can be served over TLS on the private network; it stays open until a certificate service opens it only around a renewal (VW-Q8).
 - **Deploys go through WireGuard too.** Agents deploy from their own peer, not by ssh forwarded through the bastion, so the bastion holds no component's key (PA-Q23, PA-Q41).
 - **Servers are disposable; state lives on cloud disks.** Each server's state is on its own cloud disk: rebuilding the server keeps it, and wiping it is a decision of its own (the user, 15 Nov 2026 00:55).
 - **Protected from deletion.** Every resource that Hetzner can protect is protected; production has no script that deletes, and replacing a server is the user's step (PN-Q3).
