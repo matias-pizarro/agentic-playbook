@@ -12,6 +12,7 @@ Read by mkdocs-literate-nav. Paths are relative to the repo root. Every markdown
     - [Changing a standard](docs/processes/change-a-standard.md)
     - [Work items in Vikunja](docs/processes/work-items-in-vikunja.md)
     - [Renewing Vikunja's certificate](docs/processes/renew-vikunja-certificate.md)
+    - [Setting up the ACME validation zone](docs/processes/acme-validation-zone.md)
 - [Resources catalog](catalog.md)
 - Infrastructure (from src)
     - imported/infra/*.md
