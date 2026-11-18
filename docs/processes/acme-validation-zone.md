@@ -6,10 +6,10 @@ Steps 1 to 4 are yours, in the Hetzner Console and at the registrar. Steps 5 to 
 
 Read 18 Nov 02:20 at DENIC: the domain's name servers are already `ns1.your-server.de`, `ns3.second-ns.de` and `ns.second-ns.com`, with "Status: failed": DENIC checks that the name servers answer for the zone, and no zone exists at Hetzner yet. Step 2 creates it; step 3 has the registrar try again.
 
-1. **Create the project** in the Hetzner Console, named as PA-Q82 settles. It holds the zone and nothing else.
-2. **Create the zone `cecinestpasundomaine.de`** in that project, as a primary zone, with no records of your own. Its "Name servers" tab lists the name servers it answers on ([Hetzner, Updating name servers](https://docs.hetzner.com/networking/dns/getting-started/delegate-to-hetzner/)); they should be the three above.
+1. **Create the project `certificates-acme`** in the Hetzner Console (PA-Q82). It holds the zone and nothing else.
+2. **Create the zone `cecinestpasundomaine.de`** in that project, as a primary zone, labelled `component=certificates-acme`, with no records of your own. Its "Name servers" tab lists the name servers it answers on ([Hetzner, Updating name servers](https://docs.hetzner.com/networking/dns/getting-started/delegate-to-hetzner/)); they should be the three above.
 3. **Have the registrar submit the name servers again**, as listed in step 2, in that order. A change can take up to 48 hours to propagate (same page).
-4. **Create a read-write API token** in the project (Security, API tokens), and **set a cost alert** on the project. Put the token in `~/.config/sandbox/acme-zone.token` on the host, mode 600, and tell prod-architect it is there. The token never goes into a repository, a pane or a message.
+4. **Create a read-write API token** in the project (Security, API tokens), and **set a cost alert** on the project: it emails you about spending there, though it does not stop it. Put the token in `~/.config/sandbox/acme-zone.token` on the host, mode 600, and tell prod-architect it is there. The token never goes into a repository, a pane or a message.
 5. `whois -h whois.denic.de cecinestpasundomaine.de`: yes when it says `Status: connect`.
 6. `drill cecinestpasundomaine.de NS`: yes when the answer lists exactly the name servers of step 2.
 7. `HCLOUD_TOKEN=$(cat ~/.config/sandbox/acme-zone.token) hcloud all list`: yes when it lists the zone `cecinestpasundomaine.de` and nothing else; the token's project holds nothing a stolen token could already be using.
