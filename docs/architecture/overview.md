@@ -15,6 +15,8 @@ Production is one Hetzner Cloud project, `agentic-workflows`, in Falkenstein (`f
 
 ![The production platform](platform.svg)
 
+How a request, and a certificate renewal, travel through it: [Request journeys](request-journeys.md).
+
 Every part shown is built (green); dashed lines run inside WireGuard. The agents have two peers: `agentic` (10.131.0.3), up for deploys only, and `vikunja-agents` (10.131.0.4), always up and held by the bastion to Vikunja's server, for the agents' HTTPS and MCP access. Phase 2 is below.
 
 ## Why this shape
