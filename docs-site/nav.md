@@ -7,6 +7,7 @@ Read by mkdocs-literate-nav. Paths are relative to the repo root. Every markdown
 - Architecture
     - [Overview](docs/architecture/overview.md)
     - [Standards](docs/architecture/standards.md)
+    - [Request journeys](docs/architecture/request-journeys.md)
 - Processes
     - [Deploying a component](docs/processes/deploy-a-component.md)
     - [Changing a standard](docs/processes/change-a-standard.md)
