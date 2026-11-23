@@ -37,7 +37,8 @@ Production's shared rules (components, `component=` labels, names, addresses, de
 
 The docs jail (the user, "Task an agent with create a docs jail in sylve", 20 Nov 2026 20:10; held by the lead 21 Nov 10:41); answers of 23 Nov 2026, prod-playbook pane, 23:08:
 
-- PP-Q27, open: the user, "I don't think it makes sense to separate the 3 documenation streams. What does each focus on?"
+- PP-Q27, the user, "I don't think it makes sense to separate the 3 documenation streams. What does each focus on?" (23:08); then "Yes" (23:40): the docs jail serves one combined site, with Production, Sandboxes and Method sections: the playbook, src's docs and agentic_workflow's docs, each kept in its own repo with its writers and imported at a named commit at build time, built and served by prod-playbook. This replaces PP-Q3's production-only scope and PP-Q26's exclusion of agentic_workflow's pages.
+- PP-Q34, "Yes" (23:40): the docs jail stays on hold until the docs overhaul's turn, its answers kept as recorded.
 - PP-Q28, "Yes": served only to WireGuard peers, through Sylve's reverse proxy jail over TLS at a name such as `docs.dkl.cat`, with a DNS-01 certificate; nothing reachable from the internet.
 - PP-Q29, "Yes": its readers are Sylve's peers, the user's laptop (10.131.0.2) and the deploy peer (10.131.0.3).
 - PP-Q30, "Yes": a dedicated `docs` jail on sylve-server serving static files to the proxy only; the real free disk and a jail's real cost are read before the design rests on them.
@@ -47,3 +48,4 @@ The term "remote sandbox" (the user, "it should be `remote sandboxes` instead of
 
 - PP-Q32, "Yes" (23 Nov 23:08): "remote sandbox" names a jail sandbox running on a sandbox host rather than the user's own machine; "jail sandbox" stays the model's name; src's GLOSSARY.md gets the entry and Cloud sandbox drops it from its Avoid line.
 - PP-Q33, "Yes" (23 Nov 23:08): tier `docs`; prod-playbook writes the glossary lines on its own src branch, merged on the lead's authorisation; sandbox-host renames the two lines in its `.scratch/sandbox-host/defaults.md`.
+- PP-Q35, "Yes" (23 Nov 23:40): the glossary change on src `docs/remote-sandbox` at 0f2a2ccc is right as written, to merge on the lead's authorisation.
