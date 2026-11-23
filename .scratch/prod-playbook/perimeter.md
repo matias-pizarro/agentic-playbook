@@ -32,3 +32,18 @@ Production's shared rules (components, `component=` labels, names, addresses, de
 - PP-Q12, "yes" (22:33): the rw token `agentic-workflows-prod-rw.token` while it exists, else the user makes one for the window and deletes it after.
 - PP-Q13, the user, "yes, but name should be Production playbook" (22:33): src's MkDocs setup (`pyproject.toml` with `mkdocs-material==9.7.7` and `mkdocs-literate-nav` under `uv`, `docs-site/` with `mkdocs.yml` and `nav.md`, the repo as the site, the same theme and extensions, `--strict`, commitizen and pre-commit with gitleaks); `site_name: Production playbook`.
 - PP-Q14, "yes" (22:33): before merging prod-architect's branches, prod-playbook checks only the `--strict` build, the render and gitleaks; a visual change is shown to the user as a render before it is committed.
+
+- PP-Q5 superseded (the user, CS-Q82, "Yes", lead pane 22 Nov 22:14; relayed by the lead 23 Nov 23:00): the playbook has a private remote, `git@github-agentic-playbook:matias-pizarro/agentic-playbook.git`; the standing push go covers `main` of that repo only, after a gitleaks pass. First push 23 Nov 23:09, at 4b56202.
+
+The docs jail (the user, "Task an agent with create a docs jail in sylve", 20 Nov 2026 20:10; held by the lead 21 Nov 10:41); answers of 23 Nov 2026, prod-playbook pane, 23:08:
+
+- PP-Q27, open: the user, "I don't think it makes sense to separate the 3 documenation streams. What does each focus on?"
+- PP-Q28, "Yes": served only to WireGuard peers, through Sylve's reverse proxy jail over TLS at a name such as `docs.dkl.cat`, with a DNS-01 certificate; nothing reachable from the internet.
+- PP-Q29, "Yes": its readers are Sylve's peers, the user's laptop (10.131.0.2) and the deploy peer (10.131.0.3).
+- PP-Q30, "Yes": a dedicated `docs` jail on sylve-server serving static files to the proxy only; the real free disk and a jail's real cost are read before the design rests on them.
+- PP-Q31, the user, "src's and agentic_workflow's docs, are in scope (see PP-Q27)": the other items proposed out of scope (internet exposure, a forge, logins beyond WireGuard, search or analytics, content changes) were not named in the answer.
+
+The term "remote sandbox" (the user, "it should be `remote sandboxes` instead of `jailed sandboxes`", lead pane 22 Nov 22:14):
+
+- PP-Q32, "Yes" (23 Nov 23:08): "remote sandbox" names a jail sandbox running on a sandbox host rather than the user's own machine; "jail sandbox" stays the model's name; src's GLOSSARY.md gets the entry and Cloud sandbox drops it from its Avoid line.
+- PP-Q33, "Yes" (23 Nov 23:08): tier `docs`; prod-playbook writes the glossary lines on its own src branch, merged on the lead's authorisation; sandbox-host renames the two lines in its `.scratch/sandbox-host/defaults.md`.
