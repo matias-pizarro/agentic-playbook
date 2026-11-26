@@ -48,4 +48,5 @@ The term "remote sandbox" (the user, "it should be `remote sandboxes` instead of
 
 - PP-Q32, "Yes" (23 Nov 23:08): "remote sandbox" names a jail sandbox running on a sandbox host rather than the user's own machine; "jail sandbox" stays the model's name; src's GLOSSARY.md gets the entry and Cloud sandbox drops it from its Avoid line.
 - PP-Q33, "Yes" (23 Nov 23:08): tier `docs`; prod-playbook writes the glossary lines on its own src branch, merged on the lead's authorisation; sandbox-host renames the two lines in its `.scratch/sandbox-host/defaults.md`.
+- PP-Q36, "Yes" (26 Nov 21:26): src's glossary gets a "Local sandbox" entry, a container on the user's own host, and its Sandbox entry names the three kinds, local, remote and cloud; written on src `docs/local-sandbox`, shown to the user before it merges.
 - PP-Q35, "Yes" (23 Nov 23:40): the glossary change on src `docs/remote-sandbox` at 0f2a2ccc is right as written, to merge on the lead's authorisation.
