@@ -1,40 +1,45 @@
-// The production platform: the Hetzner Cloud project agentic-workflows.
-// Built (1a, 1b, 1c) in green; Phase 2 is in phase-2.reladraw.
+// The production platform: the Hetzner Cloud project agentic-workflows, as it runs.
 // One dashed line: every peer's WireGuard tunnel to the bastion; what each
 // peer reaches is written in its own box, so no line carries a peer's label.
 
 default edge  line: (path: square, corners: rounded)
 
 style built   fill: theme-primary-subtle    border: theme-primary
-style intent  fill: theme-fill              border: theme-border
+style jail    fill: theme-fill              border: theme-primary
 style disk    fill: theme-secondary-subtle  border: theme-secondary  badge: database
 style dim     text: (color: theme-muted)
 style wg      line: (pattern: dashed)
 
 node project "Hetzner Cloud project agentic-workflows / [dim]fsn1, network zone eu-central[/dim]"
 
-node project.edge "Public side: net, Phase 1a"
-node project.edge.fw      "net-firewall / [dim]in: 22/tcp, 80/tcp, 51820/udp, icmp[/dim]"  style: built
-node project.edge.bastion "net-bastion  10.130.0.2 / [dim]public IPv4 and IPv6[/dim] / [dim]WireGuard in, NAT out[/dim] / [dim]Caddy :80: ACME only, for vikunja.dkl.cat[/dim]"  style: built
-node project.edge.netdisk "net-state / [dim]WireGuard and ssh host keys,[/dim] / [dim]Caddy's certificate (encrypted)[/dim]"  style: disk
+node project.edge "Public side: net"
+node project.edge.fw      "net-firewall / [dim]in: 22/tcp, 51820/udp, icmp[/dim]"  style: built
+node project.edge.bastion "net-bastion  10.130.0.2 / [dim]public IPv4 and IPv6[/dim] / [dim]WireGuard in, NAT out[/dim]"  style: built
+node project.edge.netdisk "net-state / [dim]WireGuard and ssh host keys (encrypted)[/dim]"  style: disk
 
 node project.private "net-network  10.130.0.0/16 / [dim]no public addresses[/dim] / [dim]default route via the bastion[/dim]"
   right of project.edge  gap: 16  top level with project.edge
-node project.private.vikunja "vikunja-server  10.130.1.10 / [dim]1b: Vikunja, PostgreSQL, audit log[/dim] / [dim]hitch :443, https://vikunja.dkl.cat[/dim] / [dim]from 10.131.0.2 and .4 only[/dim]"  style: built
-node project.private.vdisk   "vikunja-state / [dim]encrypted datasets[/dim]"  style: disk
-node project.private.sylve   "sylve-server  10.130.1.11 / [dim]1c: Sylve, jails only[/dim]"  style: built
-node project.private.sdisk   "sylve-state"  style: disk
+node project.private.sylve "sylve-server  10.130.1.11, alias 10.130.1.10 / [dim]Sylve; jails on 10.132.0.0/24[/dim]"  style: built
+node project.private.sylve.proxy   "jail proxy  10.132.0.5 / [dim]TLS for vikunja, zulip, sylve[/dim] / [dim]:443 on 10.130.1.10 and .11[/dim]"  style: jail
+node project.private.sylve.vikunja "jail vikunja  10.132.0.10 / [dim]Vikunja, audit log[/dim]"  style: jail
+node project.private.sylve.pg      "jails pgprimary .20, pgreplica .21 / [dim]PostgreSQL, streaming replica[/dim]"  style: jail
+node project.private.sdisk "sylve-state / [dim]every jail's data (encrypted)[/dim]"  style: disk
+node project.private.zulip "zulip-server  10.130.1.12 / [dim]Zulip, reached through the proxy[/dim]"  style: built  right of project.private.sylve  gap: 16  top level with project.private.sylve
+node project.private.zdisk "zulip-state"  style: disk  below project.private.zulip  gap: tight  left level with project.private.zulip
 
-node project.dns "zone dkl.cat, component=net / [dim]gw-net, gw-net.private,[/dim] / [dim]<component>.private,[/dim] / [dim]vikunja (A, for Caddy)[/dim]"  style: built
+node project.dns "zone dkl.cat, component=net / [dim]gw-net, <component>.private,[/dim] / [dim]vikunja, zulip, sylve (private addresses),[/dim] / [dim]their DNS-01 challenge CNAMEs[/dim]"  style: built
   below project.edge  gap: wide  left level with project.edge
 
 node peers "WireGuard peers"  left of project  gap: 30  top level with project
-node peers.laptop "Your laptop  10.131.0.2 / [dim]ssh to every server;[/dim] / [dim]https to Vikunja[/dim]"
-node peers.agents "Agents' host  10.131.0.3 / [dim]interface agentic, deploys:[/dim] / [dim]ssh; up for deploys only[/dim]"
-node peers.vpeer  "Agents' Vikunja peer  10.131.0.4 / [dim]always up, held to 10.130.1.10:[/dim] / [dim]https and MCP to Vikunja[/dim]"
+node peers.laptop "Your laptop  10.131.0.2 / [dim]ssh to every server;[/dim] / [dim]https to the web UIs[/dim]"
+node peers.agents "Agents' host  10.131.0.3 / [dim]interface prod-agt-deploy, deploys:[/dim] / [dim]ssh; up for deploys only[/dim]"
+node peers.held   "Held to 10.130.1.10:443 / [dim]agents' Vikunja peer .4, always up[/dim] / [dim]your phone .5[/dim] / [dim]the sandbox host .6[/dim]"
 
-node internet "Internet / [dim]Let's Encrypt[/dim]"  shape: circle  below peers  gap: wide  left level with peers
+node internet "Internet"  shape: circle  below peers  gap: wide  left level with peers
 
 edge peers -> project.edge.fw  "WireGuard, 51820/udp"  style: wg  from: right  to: left
-edge internet <-> project.edge.bastion  "NAT out; ACME in on :80"  from: right  to: left
+edge internet <-> project.edge.bastion  "NAT out"  from: right  to: left
 edge project.edge.bastion -> project.private   "routes"   from: right  to: left
+edge project.private.sylve.proxy -> project.private.sylve.vikunja  "http :3456"
+edge project.private.sylve.vikunja -> project.private.sylve.pg  "SQL"
+edge project.private.sylve.proxy -> project.private.zulip  "https"  from: right  to: left

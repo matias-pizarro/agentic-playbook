@@ -1,4 +1,4 @@
-// How a deploy reaches a private server, and how a web UI is reached.
+// How a deploy reaches a private server.
 // Every step left to right; dashed is inside the WireGuard tunnel.
 
 default edge  line: (path: square, corners: rounded)
@@ -9,16 +9,16 @@ style dim     text: (color: theme-muted)
 style wg      line: (pattern: dashed)
 
 node agent "Seat's script / [dim]in the agents' jail[/dim] / [dim]ssh root@10.130.1.n[/dim]"  style: host
-node wg1 "Host: agentic + pf / [dim]source rewritten[/dim] / [dim]to 10.131.0.3[/dim]"  style: host
+node wg1 "Host: prod-agt-deploy + pf / [dim]source rewritten[/dim] / [dim]to 10.131.0.3[/dim]"  style: host
   right of agent  gap: 14
 node bastion "net-bastion / [dim]WireGuard 51820/udp[/dim] / [dim]routes the peer in,[/dim] / [dim]its address kept[/dim]"  style: built
   right of wg1  gap: 18
-node server "<component>-server / [dim]10.130.1.n, ssh :22[/dim] / [dim]sees 10.131.0.3[/dim] / [dim]web UI on 127.0.0.1[/dim]"  style: built
+node server "<component>-server / [dim]10.130.1.n, ssh :22[/dim] / [dim]sees 10.131.0.3[/dim]"  style: built
   right of bastion  gap: 14
 
 edge agent -> wg1      "10.130.0.0/16"  from: right  to: left
 edge wg1 -> bastion    "WireGuard"  style: wg  from: right  to: left
 edge bastion -> server "ssh"  from: right  to: left
 
-node note "A web UI: ssh -L 8080:localhost:<port> root@10.130.1.n through the same path, then http://localhost:8080 on the device. Replies return over the network's default route via the bastion. No web port is open to the internet. The tunnel agentic is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard." (wrap: 70, size: small, color: theme-muted)
+node note "Replies return over the network's default route via the bastion. No web port is open to the internet. The tunnel prod-agt-deploy is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard." (wrap: 70, size: small, color: theme-muted)
   shape: none  below agent  gap: wide  left level with agent
