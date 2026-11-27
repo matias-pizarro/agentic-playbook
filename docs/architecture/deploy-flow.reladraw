@@ -1,24 +1,48 @@
-// How a deploy reaches a private server.
-// Every step left to right; dashed is inside the WireGuard tunnel.
+// How a deploy reaches a private server: drawn to src's docs/diagram-conventions.md (CS-Q109 (b)); reladraw 0.16.0.
+// ---------------------------------------------------------------------------
+icon firewall """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d2904e" stroke-width="1.8"><rect x="2" y="4" width="20" height="16"/><path d="M2 9.3h20M2 14.6h20M8 4v5.3M16 4v5.3M5 9.3v5.3M12 9.3v5.3M19 9.3v5.3M8 14.6V20M16 14.6V20"/></svg>
+"""
+icon network """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6fa8dc" stroke-width="1.8"><circle cx="12" cy="4" r="2.2"/><circle cx="4" cy="19" r="2.2"/><circle cx="20" cy="19" r="2.2"/><path d="M12 6.2V12M4 16.8V12h16v4.8"/></svg>
+"""
 
 default edge  line: (path: square, corners: rounded)
 
-style host    fill: theme-fill              border: theme-border
-style built   fill: theme-primary-subtle    border: theme-primary
-style dim     text: (color: theme-muted)
-style wg      line: (pattern: dashed)
+style project   fill: #16161c  border: #3a3a48
+style network   fill: #0f1a24  border: #6fa8dc  badge: network
+style firewall  fill: #3a2410  border: #d2904e  badge: firewall
+style server    fill: #142814  border: #486544  badge: desktop
+style jail      fill: #1d1830  border: #7a68b8  badge: cube
+style disk      fill: #460000  border: #8f3a3a  badge: disk
+style peer      fill: #191728  border: #4f5367  badge: laptop
+style zone      fill: #16161c  border: #3a3a48  shape: document
+style internet  shape: circle
+style tunnel    line: (pattern: dashed, thickness: thick, color: #6fa8dc)
+style mount     line: (pattern: dotted)
+style dim       text: (color: theme-muted)
+style rule      fill: #2a1a0c  border: #8a5a2c
+// ---------------------------------------------------------------------------
 
-node agent "Seat's script / [dim]in the agents' jail[/dim] / [dim]ssh root@10.130.1.n[/dim]"  style: host
-node wg1 "Host: prod-agt-deploy + pf / [dim]source rewritten[/dim] / [dim]to 10.131.0.3[/dim]"  style: host
-  right of agent  gap: 14
-node bastion "net-bastion / [dim]WireGuard 51820/udp[/dim] / [dim]routes the peer in,[/dim] / [dim]its address kept[/dim]"  style: built
-  right of wg1  gap: 18
-node server "<component>-server / [dim]10.130.1.n, ssh :22[/dim] / [dim]sees 10.131.0.3[/dim]"  style: built
-  right of bastion  gap: 14
+// How a deploy reaches a private server, every step left to right.
+// The firewall is placed first, so the hosts line up with its rule row.
 
-edge agent -> wg1      "10.130.0.0/16"  from: right  to: left
-edge wg1 -> bastion    "WireGuard"  style: wg  from: right  to: left
-edge bastion -> server "ssh"  from: right  to: left
+node fw "net-firewall"  style: firewall
+node fw.wg "in: 51820/udp / [dim]WireGuard[/dim]"  style: rule
+node host "Agents' host / [dim]interface prod-agt-deploy, up for a deploy;[/dim] / [dim]pf rewrites the source to 10.131.0.3[/dim]"  style: peer
+  left of fw (gap: 18)  level with fw.wg
+node agent "Seat's script / [dim]in the agents' jail, 10.250.0.2:[/dim] / [dim]ssh root@10.130.1.n[/dim]"  style: peer
+  left of host (gap: 14)  level with host
+node net "net-network  10.130.0.0/16"  style: network
+  right of fw (gap: 18)
+node net.bastion "net-bastion  10.130.0.2 / [dim]routes the peer in,[/dim] / [dim]its address kept[/dim]"  style: server
+node net.server "<component>-server  10.130.1.n / [dim]ssh :22, sees 10.131.0.3[/dim]"  style: server
+  right of net.bastion (gap: 14)
 
-node note "Replies return over the network's default route via the bastion. No web port is open to the internet. The tunnel prod-agt-deploy is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard." (wrap: 70, size: small, color: theme-muted)
-  shape: none  below agent  gap: wide  left level with agent
+edge agent -> host  "ssh :22, to 10.130.0.0/16"  from: right  to: left
+edge host -> fw.wg  "WireGuard"  style: tunnel  from: right  to: left
+edge fw.wg -> net.bastion  "WireGuard"  style: tunnel  from: right  to: left
+edge net.bastion -> net.server  "ssh :22"  from: right  to: left
+
+node legend "Replies return over the network's default route via the bastion. The tunnel prod-agt-deploy is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard. / Boxes: laptop = peer outside the project; brick wall, orange = firewall, one row per rule; blue outline with a network sign = network; green with a screen = server. Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port." (wrap: 100)
+  shape: none  below agent (gap: wide)  left level with agent
