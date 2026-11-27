@@ -65,3 +65,4 @@ The term "remote sandbox" (the user, "it should be `remote sandboxes` instead of
   - "these dotted lines should not cross each other" (no time stamp on that message; it came after 23:42 and before 23:50): `zulip-state` moved below `zulip-server`;
   - "all the disk dotted lines could, and therefore should, be straight" (23:50): tried without the project box;
   - "restore the previous version, the box for the project was good to have" (23:53): the box kept. The `net-state` and `sylve-state` lines bend, because reladraw 0.16.0 aligns a node only with its siblings; architect adds this to the conventions page with SH-Q120.
+- LB-Q11, "yes" (the user, librarian pane, 28 Nov 2026 00:45): both glossaries' "Component" entries follow `infra/COMPONENTS.md` (a6c2e602): a piece of the platform with one builder seat, not only production's. The playbook's is committed on `main`; src's is on `docs/glossary-component`, merged on the lead's authorisation.
