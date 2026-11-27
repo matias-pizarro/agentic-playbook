@@ -4,7 +4,7 @@ How an incoming request travels through the network, and how a certificate is re
 
 ## A user's request
 
-Everything is on the private network. The only door from the internet is WireGuard on the bastion. A peer's own address is kept as far as `sylve-server`, so each layer filters by who it really is ([CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Exposure" and "Deploys into the private network").
+Everything is on the private network. The only door from the internet is WireGuard on the bastion. A peer's own address is kept as far as `sylve-server`, so each layer filters by who it really is ([SECURITY.md](../../imported/infra/SECURITY.md), "Exposure", and [CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Deploys into the private network").
 
 ```mermaid
 sequenceDiagram
@@ -62,7 +62,7 @@ Sylve's UI follows the Vikunja journey to 10.130.1.11:443, from Sylve's peers, t
 
 ## A certificate renewal (DNS-01)
 
-Nothing comes into the network. Every connection goes outward through the NATs, and Let's Encrypt checks only public DNS at Hetzner. Port 80 is closed ([CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Exposure" and "Certificates").
+Nothing comes into the network. Every connection goes outward through the NATs, and Let's Encrypt checks only public DNS at Hetzner. Port 80 is closed ([SECURITY.md](../../imported/infra/SECURITY.md), "Exposure", and [CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Certificates").
 
 ```mermaid
 sequenceDiagram

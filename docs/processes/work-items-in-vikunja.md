@@ -6,7 +6,7 @@ The team's work items are tasks in production Vikunja, at `https://vikunja.dkl.c
 
 - **A work item is a Vikunja task.** Its description holds what to build, its requirements, the Ceremony line, its acceptance criteria and its failure modes. Its bucket, labels and links hold its state.
 - **The user works in Vikunja's web UI.** Each seat works through Pi's Vikunja MCP, as a bot of its own, whose token `operator-setup.sh <seat>` makes on the host. Until a seat has its bot, it uses the shared bot `bot-agents-jail`.
-- **Reached over WireGuard only, by HTTPS.** The agents' peer `vikunja-agents` (10.131.0.4) is always up and is held by the bastion to 10.130.1.10:443. The reverse proxy there serves `vikunja.dkl.cat` with a Let's Encrypt certificate ([Architecture](../architecture/overview.md); [CONSTANTS.md](../../imported/infra/CONSTANTS.md) "Exposure").
+- **Reached over WireGuard only, by HTTPS.** The agents' peer `vikunja-agents` (10.131.0.4) is always up and is held by the bastion to 10.130.1.10:443. The reverse proxy there serves `vikunja.dkl.cat` with a Let's Encrypt certificate ([Architecture](../architecture/overview.md); [SECURITY.md](../../imported/infra/SECURITY.md) "Exposure").
 - **An audit log.** Database triggers record every change to tasks, comments, labels, links, buckets and attachments, in a schema Vikunja's own database role cannot alter. A weakened acceptance criterion therefore cannot pass unseen (rule 14). How to read it is in Vikunja's README, under Infrastructure.
 
 ## Why
