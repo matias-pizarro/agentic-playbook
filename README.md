@@ -1,8 +1,8 @@
 # Production playbook
 
-How production is built and kept running: the Hetzner Cloud project `agentic-workflows`, Phase 1a (net), 1b (vikunja), 1c (sylve) and later phases. Its architecture, processes and technical details, and the resources catalog.
+How production is built and kept running: the Hetzner Cloud project `agentic-workflows`, its components (net, sylve, vikunja, zulip), its architecture and processes, and the resources catalog.
 
-- **Architecture, Processes, Technical details**: written by seat `prod-architect`.
+- **Architecture, Processes**: the platform as it runs and the steps that operate it, kept by seat `librarian`, their facts checked by `architect`.
 - **Infrastructure (from src)**: the infra READMEs and `infra/CONSTANTS.md`, imported from src at the commit `docs-site/mkdocs.yml` names (`extra.src_commit`). Their code and rules live in src; each such page names its commit.
 - **Resources catalog**: every resource in the production project, generated from the project by src's `infra/net/catalog` with the read-only token, at the same src commit; a copy taken when the site was built.
 
@@ -23,4 +23,4 @@ The export `NO_MKDOCS_2_WARNING=true DISABLE_MKDOCS_2_WARNING=true` silences the
 
 ## Writing here
 
-Each writer works on a `feat/<topic>` branch in its own worktree; seat `prod-playbook` merges into `main` with `git merge --no-ff` once the strict build passes on the branch. A new page needs a line in `docs-site/nav.md`, added in the same commit: the strict build fails on a page missing from the nav, and on a nav glob matching nothing.
+Each writer works on a `feat/<topic>` branch in its own worktree; seat `librarian` merges into `main` with `git merge --no-ff` once the strict build passes on the branch. A new page needs a line in `docs-site/nav.md`, added in the same commit: the strict build fails on a page missing from the nav, and on a nav glob matching nothing.

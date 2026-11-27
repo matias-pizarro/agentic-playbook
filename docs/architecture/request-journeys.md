@@ -62,7 +62,7 @@ Sylve's UI follows the Vikunja journey to 10.130.1.11:443, from Sylve's peers, t
 
 ## A certificate renewal (DNS-01)
 
-Nothing comes into the network. Every connection goes outward through the NATs, and Let's Encrypt checks only public DNS at Hetzner. Port 80 has been closed since 21 Nov 2026 ([CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Exposure" and "Certificates").
+Nothing comes into the network. Every connection goes outward through the NATs, and Let's Encrypt checks only public DNS at Hetzner. Port 80 is closed ([CONSTANTS.md](../../imported/infra/CONSTANTS.md), "Exposure" and "Certificates").
 
 ```mermaid
 sequenceDiagram

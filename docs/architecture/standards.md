@@ -6,11 +6,11 @@ What every production component follows, where it is written, and how it changes
 
 | What | Where | Who writes it |
 |---|---|---|
-| Rules a production script applies: labels, names, addresses, access, protection, files on the host, documentation | src `infra/CONSTANTS.md`, section "Production" ([imported](../../imported/infra/CONSTANTS.md)) | seat `prod-architect`, each rule quoting the user's decision |
+| Rules a production script applies: labels, names, addresses, access, protection, files on the host, documentation | src `infra/CONSTANTS.md`, section "Production" ([imported](../../imported/infra/CONSTANTS.md)) | seat `architect`, each rule quoting the user's decision |
 | How scripts are written | src `CODING_STANDARDS.md` | any seat, by review |
-| The vocabulary | src `GLOSSARY.md`, and this site's [Glossary](../../GLOSSARY.md) | prod-architect for production terms |
+| The vocabulary | src `GLOSSARY.md`, and this site's [Glossary](../../GLOSSARY.md) | librarian, architect for the names production uses |
 | Decisions that are hard to reverse | src `docs/adr/` | the seat making the decision |
-| How production is run | this playbook | each component its README; prod-architect the cross-component pages |
+| How production is run | this playbook | each component its README; librarian the cross-component pages, their facts checked by architect |
 
 The playbook links to a rule; it never restates one, so there is one place to change it (PA-Q4).
 
