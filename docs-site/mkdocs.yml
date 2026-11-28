@@ -16,7 +16,7 @@ exclude_docs: |
 # The infra pages imported from src at this commit (PP-Q7): the import
 # command in the README reads it, and every imported page names it.
 extra:
-  src_commit: 8a13a02eb65a7eb261bd192645b3da174f609187
+  src_commit: 92ee970a11193ce45c82554561059528f64ca16f
 theme:
   name: material
   # Relative to this file: the note on imported pages.
