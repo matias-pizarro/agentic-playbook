@@ -11,13 +11,13 @@ diagram  checks: (edge-crossings: on)
 default edge  line: (path: square, corners: rounded)
 
 style project   fill: #16161c  border: #3a3a48
-style network   fill: #0f1a24  border: #6fa8dc  badge: network
-style firewall  fill: #3a2410  border: #d2904e  badge: firewall
-style server    fill: #142814  border: #486544  badge: monitor
-style jail      fill: #1d1830  border: #7a68b8  badge: box
-style disk      fill: #460000  border: #8f3a3a  badge: hard-drive
-style peer      fill: #191728  border: #4f5367  badge: laptop
-style zone      fill: #16161c  border: #3a3a48  shape: document
+style network   fill: #0f1a24  border: #6fa8dc  // icon: network
+style firewall  fill: #3a2410  border: #d2904e  // icon: firewall
+style server    fill: #142814  border: #486544  // icon: server
+style jail      fill: #1d1830  border: #7a68b8  // icon: box
+style disk      fill: #460000  border: #8f3a3a  // icon: hard-drive
+style peer      fill: #191728  border: #4f5367  // icon: laptop
+style zone      fill: #16161c  border: #3a3a48  shape: document  // icon: signpost
 style internet  shape: circle
 style tunnel    line: (pattern: dashed, thickness: thick, color: #6fa8dc)
 style mount     line: (pattern: dotted)
@@ -31,21 +31,26 @@ style acts      line: (pattern: dash-dot, thickness: thin)
 // The firewall is placed first, so the hosts line up with its rule row.
 
 node fw "net-firewall" (inside top, align: left)  style: firewall  padding-left: 4
+node fw.icon  icon: firewall  1 left of fw text  join-with: fw text
 node fw.wg "in: 51820/udp / [dim]WireGuard[/dim]"  style: rule
-node host "Agents' host / [dim]interface prod-agt-deploy, up for a deploy;[/dim] / [dim]pf rewrites the source to 10.131.0.3[/dim]"  style: peer
+node host "Agents' host / [dim]interface prod-agt-deploy, up for a deploy;[/dim] / [dim]pf rewrites the source to 10.131.0.3[/dim]" (inside top, align: left)  style: peer
   12 left of fw  even with fw.wg
+node host.icon  icon: laptop  1 left of host text  join-with: host text
 node agent "Seat's script / [dim]in the agents' jail, 10.250.0.2:[/dim] / [dim]ssh root@10.130.1.n[/dim]"  style: project
   24 left of host  even with host
 node net "net-network  10.130.0.0/16" (inside top, align: left)  style: network  padding-left: 4
   12 right of fw
-node net.bastion "net-bastion  10.130.0.2 / [dim]routes the peer in,[/dim] / [dim]its address kept[/dim]"  style: server
-node net.server "<component>-server  10.130.1.n / [dim]ssh :22, sees 10.131.0.3[/dim]"  style: server
+node net.icon  icon: network  1 left of net text  join-with: net text
+node net.bastion "net-bastion  10.130.0.2 / [dim]routes the peer in,[/dim] / [dim]its address kept[/dim]" (inside top, align: left)  style: server
+node net.bastion.icon  icon: server  1 left of net.bastion text  join-with: net.bastion text
+node net.server "<component>-server  10.130.1.n / [dim]ssh :22, sees 10.131.0.3[/dim]" (inside top, align: left)  style: server
   10 right of net.bastion
+node net.server.icon  icon: server  1 left of net.server text  join-with: net.server text
 
 edge agent -> host  "ssh :22, to 10.130.0.0/16"  from: right  to: left
 edge host -> fw.wg  "WireGuard"  style: tunnel  from: right  to: left
 edge fw.wg -> net.bastion  "WireGuard"  style: tunnel  from: right  to: left
 edge net.bastion -> net.server  "ssh :22"  from: right  to: left
 
-node legend "Replies return over the network's default route via the bastion. The tunnel prod-agt-deploy is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard. / Boxes: plain grey = a process (the seat's script); laptop = a WireGuard peer outside the project; brick wall, orange = firewall, one row per rule; blue outline with a network sign = network; green with a monitor = server. Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port." (wrap: 100)
+node legend "Replies return over the network's default route via the bastion. The tunnel prod-agt-deploy is up only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard. / Boxes: plain grey = a process (the seat's script); laptop = a WireGuard peer outside the project; brick wall, orange = firewall, one row per rule; blue outline with a network sign = network; green with a server rack = server. Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port." (wrap: 100)
   shape: none  below agent (gap: wide)  left even with agent

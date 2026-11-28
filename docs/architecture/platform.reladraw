@@ -11,13 +11,13 @@ diagram  checks: (edge-crossings: on)
 default edge  line: (path: square, corners: rounded)
 
 style project   fill: #16161c  border: #3a3a48
-style network   fill: #0f1a24  border: #6fa8dc  badge: network
-style firewall  fill: #3a2410  border: #d2904e  badge: firewall
-style server    fill: #142814  border: #486544  badge: monitor
-style jail      fill: #1d1830  border: #7a68b8  badge: box
-style disk      fill: #460000  border: #8f3a3a  badge: hard-drive
-style peer      fill: #191728  border: #4f5367  badge: laptop
-style zone      fill: #16161c  border: #3a3a48  shape: document
+style network   fill: #0f1a24  border: #6fa8dc  // icon: network
+style firewall  fill: #3a2410  border: #d2904e  // icon: firewall
+style server    fill: #142814  border: #486544  // icon: server
+style jail      fill: #1d1830  border: #7a68b8  // icon: box
+style disk      fill: #460000  border: #8f3a3a  // icon: hard-drive
+style peer      fill: #191728  border: #4f5367  // icon: laptop
+style zone      fill: #16161c  border: #3a3a48  shape: document  // icon: signpost
 style internet  shape: circle
 style tunnel    line: (pattern: dashed, thickness: thick, color: #6fa8dc)
 style mount     line: (pattern: dotted)
@@ -33,43 +33,59 @@ node project "Hetzner Cloud project agentic-workflows / [dim]fsn1, network zone 
 
 // The firewall in front of the bastion, one rule per row, each line meeting its row level.
 node project.fw "net-firewall / [dim]Hetzner firewall, on net-bastion[/dim]" (inside top, align: left)  style: firewall
+node project.fw.icon  icon: firewall  1 left of project.fw text  join-with: project.fw text
 node project.fw.wg   "in: 51820/udp / [dim]WireGuard, from anywhere[/dim]"  style: rule  min-height: 22
 node project.fw.ssh  "in: 22/tcp, icmp / [dim]from anywhere[/dim]"  style: rule  5 below project.fw.wg
 node project.fw.out  "out: all / [dim]NAT on the bastion[/dim]"  style: rule  5 below project.fw.ssh
 
 node project.net "net-network  10.130.0.0/16 / [dim]private, no public addresses; default route via the bastion[/dim]" (inside top, align: left)  style: network  padding-bottom: 4  padding-right: 4  padding-left: 4
   12 right of project.fw  top even with project.fw
+node project.net.icon  icon: network  1 left of project.net text  join-with: project.net text
 
-node project.net.bastion "net-bastion  10.130.0.2 / [dim]VM: public IPv4 and IPv6,[/dim] / [dim]WireGuard in, NAT out[/dim]"  style: server  min-height: 22
+node project.net.bastion "net-bastion  10.130.0.2 / [dim]VM: public IPv4 and IPv6,[/dim] / [dim]WireGuard in, NAT out[/dim]" (inside top, align: left)  style: server  min-height: 22
+node project.net.bastion.icon  icon: server  1 left of project.net.bastion text  join-with: project.net.bastion text
 node project.net.sylve "sylve-server  10.130.1.11, alias 10.130.1.10 / [dim]VM: Sylve[/dim]" (inside top, align: left)  style: server
   3 below project.net.bastion  left even with project.net.bastion
+node project.net.sylve.icon  icon: server  1 left of project.net.sylve text  join-with: project.net.sylve text
 node project.net.sylve.bridge "jails' bridge  10.132.0.0/24 / [dim]internal network[/dim]" (inside top, align: left)  style: network  padding-bottom: 4
-node project.net.sylve.bridge.proxy   "proxy  10.132.0.5 / [dim]jail: TLS for vikunja, zulip, sylve,[/dim] / [dim]:443 on 10.130.1.10 and .11[/dim]"  style: jail  min-width: 36
-node project.net.sylve.bridge.vikunja "vikunja  10.132.0.10 / [dim]jail: Vikunja, audit log[/dim]"  style: jail
+node project.net.sylve.bridge.icon  icon: network  1 left of project.net.sylve.bridge text  join-with: project.net.sylve.bridge text
+node project.net.sylve.bridge.proxy   "proxy  10.132.0.5 / [dim]jail: TLS for vikunja, zulip, sylve,[/dim] / [dim]:443 on 10.130.1.10 and .11[/dim]" (inside top, align: left)  style: jail  min-width: 36
+node project.net.sylve.bridge.proxy.icon  icon: box  1 left of project.net.sylve.bridge.proxy text  join-with: project.net.sylve.bridge.proxy text
+node project.net.sylve.bridge.vikunja "vikunja  10.132.0.10 / [dim]jail: Vikunja, audit log[/dim]" (inside top, align: left)  style: jail
   right of project.net.sylve.bridge.proxy (gap: 20)  even with project.net.sylve.bridge.proxy
-node project.net.sylve.bridge.pg      "pgprimary .20, pgreplica .21 / [dim]jails: PostgreSQL, streaming replica[/dim]"  style: jail
+node project.net.sylve.bridge.vikunja.icon  icon: box  1 left of project.net.sylve.bridge.vikunja text  join-with: project.net.sylve.bridge.vikunja text
+node project.net.sylve.bridge.pg      "pgprimary .20, pgreplica .21 / [dim]jails: PostgreSQL, streaming replica[/dim]" (inside top, align: left)  style: jail
   5 below project.net.sylve.bridge.vikunja
-node project.net.zulip "zulip-server  10.130.1.12 / [dim]VM: Zulip, reached through the proxy[/dim]"  style: server  min-width: 36
+node project.net.sylve.bridge.pg.icon  icon: box  1 left of project.net.sylve.bridge.pg text  join-with: project.net.sylve.bridge.pg text
+node project.net.zulip "zulip-server  10.130.1.12 / [dim]VM: Zulip, reached through the proxy[/dim]" (inside top, align: left)  style: server  min-width: 36
   6 below project.net.sylve  left even with project.net.sylve.bridge.proxy
+node project.net.zulip.icon  icon: server  1 left of project.net.zulip text  join-with: project.net.zulip text
 
 // Each disk right of the network, level with the server it is attached to.
-node project.netdisk "net-state / [dim]cloud disk: WireGuard and ssh host keys[/dim]"  style: disk
+node project.netdisk "net-state / [dim]cloud disk: WireGuard and ssh host keys[/dim]" (inside top, align: left)  style: disk
   right of project.net (gap: 30)  even with project.net.bastion
-node project.sdisk "sylve-state / [dim]cloud disk: every jail's data, encrypted[/dim]"  style: disk
+node project.netdisk.icon  icon: hard-drive  1 left of project.netdisk text  join-with: project.netdisk text
+node project.sdisk "sylve-state / [dim]cloud disk: every jail's data, encrypted[/dim]" (inside top, align: left)  style: disk
   left even with project.netdisk  even with project.net.sylve
-node project.zdisk "zulip-state / [dim]cloud disk, encrypted[/dim]"  style: disk
+node project.sdisk.icon  icon: hard-drive  1 left of project.sdisk text  join-with: project.sdisk text
+node project.zdisk "zulip-state / [dim]cloud disk, encrypted[/dim]" (inside top, align: left)  style: disk
   left even with project.netdisk  even with project.net.zulip
+node project.zdisk.icon  icon: hard-drive  1 left of project.zdisk text  join-with: project.zdisk text
 
-node project.zone "zone dkl.cat / [dim]gw-net, <component>.private;[/dim] / [dim]vikunja, zulip, sylve (private addresses);[/dim] / [dim]their DNS-01 challenge CNAMEs[/dim]"  style: zone
+node project.zone "zone dkl.cat / [dim]gw-net, <component>.private;[/dim] / [dim]vikunja, zulip, sylve (private addresses);[/dim] / [dim]their DNS-01 challenge CNAMEs[/dim]" (inside top, align: left)  style: zone
   below project.fw (gap: wide)  left even with project.fw
+node project.zone.icon  icon: signpost  1 left of project.zone text  join-with: project.zone text
 
 // The WireGuard peers, each with its own tunnel to its own point of the 51820 row (rule 3).
-node agents "Agents' host  10.131.0.3 / [dim]interface prod-agt-deploy: ssh, deploys only[/dim]"  style: peer
+node agents "Agents' host  10.131.0.3 / [dim]interface prod-agt-deploy: ssh, deploys only[/dim]" (inside top, align: left)  style: peer
   left of project (gap: 18)  even with project.fw.wg
-node laptop "Your laptop  10.131.0.2 / [dim]ssh to every server, https to the web UIs[/dim]"  style: peer
+node agents.icon  icon: laptop  1 left of agents text  join-with: agents text
+node laptop "Your laptop  10.131.0.2 / [dim]ssh to every server, https to the web UIs[/dim]" (inside top, align: left)  style: peer
   right even with agents  even with 1/6 down project.fw.wg
-node held   "Held peers, to 10.130.1.10:443 only / [dim]agents' Vikunja peer .4, always up;[/dim] / [dim]your phone .5; the sandbox host .6[/dim]"  style: peer
+node laptop.icon  icon: laptop  1 left of laptop text  join-with: laptop text
+node held   "Held peers, to 10.130.1.10:443 only / [dim]agents' Vikunja peer .4, always up;[/dim] / [dim]your phone .5; the sandbox host .6[/dim]" (inside top, align: left)  style: peer
   right even with agents  even with 5/6 down project.fw.wg
+node held.icon  icon: laptop  1 left of held text  join-with: held text
 node internet "Internet"  style: internet
   right even with agents  even with project.fw.out
 
@@ -85,5 +101,5 @@ edge project.netdisk -> project.net.bastion  "attached"  style: mount  from: lef
 edge project.sdisk -> project.net.sylve  "attached"  style: mount  from: left  to: right
 edge project.zdisk -> project.net.zulip  "attached"  style: mount  from: left  to: right
 
-node legend "Boxes: brick wall, orange = firewall, one row per rule. Blue outline with a network sign = network (a container: what is inside is on it). Green with a monitor = server or VM. Violet with a box = jail, inside its server's network. Red with a hard drive = cloud disk. Laptop = a WireGuard peer outside the project, each with its own tunnel. Folded page = DNS zone. Circle = the internet. Plain grey = cloud project. / Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port; dotted = a disk attached." (wrap: 100)
+node legend "Boxes: brick wall, orange = firewall, one row per rule. Blue outline with a network sign = network (a container: what is inside is on it). Green with a server rack = server or VM. Violet with a box = jail, inside its server's network. Red with a hard drive = cloud disk. Laptop = a WireGuard peer outside the project, each with its own tunnel. Folded page with a signpost = DNS zone. Circle = the internet. Plain grey = cloud project. / Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port; dotted = a disk attached." (wrap: 100)
   shape: none  below project (gap: tight)  left even with project

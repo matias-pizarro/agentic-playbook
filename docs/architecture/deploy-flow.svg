@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2390" height="419" viewBox="0 0 2390 419" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
   <defs>
-    <marker id="re28a8388-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="rfd6fc1c1-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5c7c"/>
     </marker>
-    <marker id="re28a8388-arrow-6fa8dc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="rfd6fc1c1-arrow-6fa8dc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#6fa8dc"/>
     </marker>
   </defs>
   <rect x="0" y="0" width="2390" height="419" fill="#111111"/>
   <path d="M1217 49.5 H1414 a8 8 0 0 1 8 8 V183.5 a8 8 0 0 1 -8 8 H1217 a8 8 0 0 1 -8 -8 V57.5 a8 8 0 0 1 8 -8 Z" fill="#3a2410" stroke="#d2904e"/>
-  <text x="1223" y="87.4" fill="#d9d9d9" text-anchor="start">net-firewall</text>
-  <svg x="1336" y="63.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="#d2904e" stroke-width="1.8">
+  <text x="1273" y="87.4" fill="#d9d9d9" text-anchor="start">net-firewall</text>
+  <svg x="1223" y="63.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="#d2904e" stroke-width="1.8">
 <rect x="2" y="4" width="20" height="16"/><path d="M2 9.3h20M2 14.6h20M8 4v5.3M16 4v5.3M5 9.3v5.3M12 9.3v5.3M19 9.3v5.3M8 14.6V20M16 14.6V20"/>
   </svg>
   <path d="M1271.5 111.5 H1393.5 a8 8 0 0 1 8 8 V169.5 a8 8 0 0 1 -8 8 H1271.5 a8 8 0 0 1 -8 -8 V119.5 a8 8 0 0 1 8 -8 Z" fill="#2a1a0c" stroke="#8a5a2c"/>
   <text x="1332.5" y="139.9" fill="#d9d9d9" text-anchor="middle">in: 51820/udp</text>
   <text x="1332.5" y="158.9" fill="#8b8b8b" text-anchor="middle">WireGuard</text>
   <path d="M633 102 H1057 a8 8 0 0 1 8 8 V179 a8 8 0 0 1 -8 8 H633 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#191728" stroke="#4f5367"/>
-  <text x="820" y="130.4" fill="#d9d9d9" text-anchor="middle">Agents' host</text>
-  <text x="820" y="149.4" fill="#8b8b8b" text-anchor="middle">interface prod-agt-deploy, up for a deploy;</text>
-  <text x="820" y="168.4" fill="#8b8b8b" text-anchor="middle">pf rewrites the source to 10.131.0.3</text>
-  <svg x="1013" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <text x="689" y="130.4" fill="#d9d9d9" text-anchor="start">Agents' host</text>
+  <text x="689" y="149.4" fill="#8b8b8b" text-anchor="start">interface prod-agt-deploy, up for a deploy;</text>
+  <text x="689" y="168.4" fill="#8b8b8b" text-anchor="start">pf rewrites the source to 10.131.0.3</text>
+  <svg x="639" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"/><path d="M20.054 15.987H3.946"/>
   </svg>
   <path d="M48 102 H329 a8 8 0 0 1 8 8 V179 a8 8 0 0 1 -8 8 H48 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#16161c" stroke="#3a3a48"/>
@@ -28,41 +28,41 @@
   <text x="188.5" y="149.4" fill="#8b8b8b" text-anchor="middle">in the agents' jail, 10.250.0.2:</text>
   <text x="188.5" y="168.4" fill="#8b8b8b" text-anchor="middle">ssh root@10.130.1.n</text>
   <path d="M1574 40 H2342 a8 8 0 0 1 8 8 V193 a8 8 0 0 1 -8 8 H1574 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 8 -8 Z" fill="#0f1a24" stroke="#6fa8dc"/>
-  <text x="1580" y="77.9" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
-  <svg x="1811" y="54" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="#6fa8dc" stroke-width="1.8">
+  <text x="1630" y="77.9" fill="#d9d9d9" text-anchor="start">net-network  10.130.0.0/16</text>
+  <svg x="1580" y="54" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="#6fa8dc" stroke-width="1.8">
 <circle cx="12" cy="4" r="2.2"/><circle cx="4" cy="19" r="2.2"/><circle cx="20" cy="19" r="2.2"/><path d="M12 6.2V12M4 16.8V12h16v4.8"/>
   </svg>
   <path d="M1622 102 H1878 a8 8 0 0 1 8 8 V179 a8 8 0 0 1 -8 8 H1622 a8 8 0 0 1 -8 -8 V110 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="1725" y="130.4" fill="#d9d9d9" text-anchor="middle">net-bastion  10.130.0.2</text>
-  <text x="1725" y="149.4" fill="#8b8b8b" text-anchor="middle">routes the peer in,</text>
-  <text x="1725" y="168.4" fill="#8b8b8b" text-anchor="middle">its address kept</text>
-  <svg x="1834" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>
+  <text x="1678" y="130.4" fill="#d9d9d9" text-anchor="start">net-bastion  10.130.0.2</text>
+  <text x="1678" y="149.4" fill="#8b8b8b" text-anchor="start">routes the peer in,</text>
+  <text x="1678" y="168.4" fill="#8b8b8b" text-anchor="start">its address kept</text>
+  <svg x="1628" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/>
   </svg>
   <path d="M2014 111.5 H2328 a8 8 0 0 1 8 8 V169.5 a8 8 0 0 1 -8 8 H2014 a8 8 0 0 1 -8 -8 V119.5 a8 8 0 0 1 8 -8 Z" fill="#142814" stroke="#486544"/>
-  <text x="2146" y="139.9" fill="#d9d9d9" text-anchor="middle">&lt;component&gt;-server  10.130.1.n</text>
-  <text x="2146" y="158.9" fill="#8b8b8b" text-anchor="middle">ssh :22, sees 10.131.0.3</text>
-  <svg x="2284" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>
+  <text x="2070" y="139.9" fill="#d9d9d9" text-anchor="start">&lt;component&gt;-server  10.130.1.n</text>
+  <text x="2070" y="158.9" fill="#8b8b8b" text-anchor="start">ssh :22, sees 10.131.0.3</text>
+  <svg x="2020" y="125.5" width="38" height="38" color="#8d8d8e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/>
   </svg>
   <g font-size="12px">
   <text x="40" y="295.2" fill="#d9d9d9" text-anchor="start">Replies return over the network's default route via the bastion. The tunnel prod-agt-deploy is up</text>
   <text x="40" y="311.2" fill="#d9d9d9" text-anchor="start">only for a deploy; your laptop's peer 10.131.0.2 takes the same path from its own WireGuard.</text>
   <text x="40" y="327.2" fill="#d9d9d9" text-anchor="start">Boxes: plain grey = a process (the seat's script); laptop = a WireGuard peer outside the project;</text>
   <text x="40" y="343.2" fill="#d9d9d9" text-anchor="start">brick wall, orange = firewall, one row per rule; blue outline with a network sign = network; green</text>
-  <text x="40" y="359.2" fill="#d9d9d9" text-anchor="start">with a monitor = server. Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled</text>
+  <text x="40" y="359.2" fill="#d9d9d9" text-anchor="start">with a server rack = server. Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled</text>
   <text x="40" y="375.2" fill="#d9d9d9" text-anchor="start">protocol and port.</text>
   </g>
-  <line x1="337" y1="144.5" x2="625" y2="144.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#re28a8388-arrow-5c5c7c)"/>
+  <line x1="337" y1="144.5" x2="625" y2="144.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#rfd6fc1c1-arrow-5c5c7c)"/>
   <rect x="371" y="135" width="220" height="19" fill="#111111"/>
   <text x="481" y="149.4" fill="#d9d9d9" text-anchor="middle">ssh :22, to 10.130.0.0/16</text>
-  <line x1="1065" y1="144.5" x2="1263.5" y2="144.5" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#re28a8388-arrow-6fa8dc)"/>
+  <line x1="1065" y1="144.5" x2="1263.5" y2="144.5" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#rfd6fc1c1-arrow-6fa8dc)"/>
   <rect x="1121.25" y="135" width="86" height="19" fill="#111111"/>
   <text x="1164.25" y="149.4" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="1401.5" y1="144.5" x2="1614" y2="144.5" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#re28a8388-arrow-6fa8dc)"/>
+  <line x1="1401.5" y1="144.5" x2="1614" y2="144.5" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#rfd6fc1c1-arrow-6fa8dc)"/>
   <rect x="1464.75" y="135" width="86" height="19" fill="#111111"/>
   <text x="1507.75" y="149.4" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="1886" y1="144.5" x2="2006" y2="144.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#re28a8388-arrow-5c5c7c)"/>
+  <line x1="1886" y1="144.5" x2="2006" y2="144.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#rfd6fc1c1-arrow-5c5c7c)"/>
   <rect x="1911.5" y="135" width="69" height="19" fill="#0f1a24"/>
   <text x="1946" y="149.4" fill="#d9d9d9" text-anchor="middle">ssh :22</text>
 </svg>
