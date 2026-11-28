@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="3192" height="1228" viewBox="0 0 3192 1228" font-family="'DejaVu Sans Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace" font-size="14px">
   <defs>
-    <marker id="r2b7fef2e-arrow-6fa8dc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="r66264893-arrow-6fa8dc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#6fa8dc"/>
     </marker>
-    <marker id="r2b7fef2e-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="r66264893-arrow-5c5c7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5c7c"/>
     </marker>
   </defs>
@@ -20,9 +20,9 @@
   <path d="M784.5 164 H998.5 a8 8 0 0 1 8 8 V420 a8 8 0 0 1 -8 8 H784.5 a8 8 0 0 1 -8 -8 V172 a8 8 0 0 1 8 -8 Z" fill="#2a1a0c" stroke="#8a5a2c"/>
   <text x="891.5" y="291.4" fill="#d9d9d9" text-anchor="middle">in: 51820/udp</text>
   <text x="891.5" y="310.4" fill="#8b8b8b" text-anchor="middle">WireGuard, from anywhere</text>
-  <path d="M818 488 H965 a8 8 0 0 1 8 8 V546 a8 8 0 0 1 -8 8 H818 a8 8 0 0 1 -8 -8 V496 a8 8 0 0 1 8 -8 Z" fill="#2a1a0c" stroke="#8a5a2c"/>
+  <path d="M759.5 488 H1023.5 a8 8 0 0 1 8 8 V546 a8 8 0 0 1 -8 8 H759.5 a8 8 0 0 1 -8 -8 V496 a8 8 0 0 1 8 -8 Z" fill="#2a1a0c" stroke="#8a5a2c"/>
   <text x="891.5" y="516.4" fill="#d9d9d9" text-anchor="middle">in: 22/tcp, icmp</text>
-  <text x="891.5" y="535.4" fill="#8b8b8b" text-anchor="middle">from anywhere</text>
+  <text x="891.5" y="535.4" fill="#8b8b8b" text-anchor="middle">22: failsafe, 2 min after boot</text>
   <path d="M809.5 614 H973.5 a8 8 0 0 1 8 8 V672 a8 8 0 0 1 -8 8 H809.5 a8 8 0 0 1 -8 -8 V622 a8 8 0 0 1 8 -8 Z" fill="#2a1a0c" stroke="#8a5a2c"/>
   <text x="891.5" y="642.4" fill="#d9d9d9" text-anchor="middle">out: all</text>
   <text x="891.5" y="661.4" fill="#8b8b8b" text-anchor="middle">NAT on the bastion</text>
@@ -133,37 +133,37 @@
   <text x="704" y="1167.7" fill="#d9d9d9" text-anchor="start">Lines: thick blue dashed = WireGuard tunnel; solid = traffic, labelled protocol and port; dotted = a</text>
   <text x="704" y="1183.7" fill="#d9d9d9" text-anchor="start">disk attached.</text>
   </g>
-  <line x1="488" y1="208" x2="776.5" y2="208" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r2b7fef2e-arrow-6fa8dc)"/>
+  <line x1="488" y1="208" x2="776.5" y2="208" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r66264893-arrow-6fa8dc)"/>
   <rect x="589.25" y="198.5" width="86" height="19" fill="#111111"/>
   <text x="632.25" y="212.9" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="488" y1="296" x2="776.5" y2="296" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r2b7fef2e-arrow-6fa8dc)"/>
+  <line x1="488" y1="296" x2="776.5" y2="296" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r66264893-arrow-6fa8dc)"/>
   <rect x="589.25" y="286.5" width="86" height="19" fill="#111111"/>
   <text x="632.25" y="300.9" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="488" y1="384" x2="776.5" y2="384" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r2b7fef2e-arrow-6fa8dc)"/>
+  <line x1="488" y1="384" x2="776.5" y2="384" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r66264893-arrow-6fa8dc)"/>
   <rect x="589.25" y="374.5" width="86" height="19" fill="#111111"/>
   <text x="632.25" y="388.9" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="1006.5" y1="296" x2="1257" y2="296" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r2b7fef2e-arrow-6fa8dc)"/>
+  <line x1="1006.5" y1="296" x2="1257" y2="296" stroke="#6fa8dc" stroke-width="3.2" stroke-dasharray="12.8 9.6" marker-end="url(#r66264893-arrow-6fa8dc)"/>
   <rect x="1088.75" y="286.5" width="86" height="19" fill="#16161c"/>
   <text x="1131.75" y="300.9" fill="#6fa8dc" text-anchor="middle">WireGuard</text>
-  <line x1="488" y1="647" x2="801.5" y2="647" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r2b7fef2e-arrow-5c5c7c)" marker-start="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="488" y1="647" x2="801.5" y2="647" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r66264893-arrow-5c5c7c)" marker-start="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="610.25" y="637.5" width="69" height="19" fill="#111111"/>
   <text x="644.75" y="651.9" fill="#d9d9d9" text-anchor="middle">NAT out</text>
-  <line x1="1717" y1="630.5" x2="1957" y2="630.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="1717" y1="630.5" x2="1957" y2="630.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="1790" y="621" width="94" height="19" fill="#0f1a24"/>
   <text x="1837" y="635.4" fill="#d9d9d9" text-anchor="middle">http :3456</text>
-  <line x1="2097" y1="663.5" x2="2097" y2="723.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="2097" y1="663.5" x2="2097" y2="723.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="2054" y="684" width="86" height="19" fill="#0f1a24"/>
   <text x="2097" y="698.4" fill="#d9d9d9" text-anchor="middle">SQL :5432</text>
-  <line x1="1501" y1="673" x2="1501" y2="923.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="1501" y1="673" x2="1501" y2="923.5" stroke="#5c5c7c" stroke-width="1.6" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="1454" y="882.69" width="94" height="19" fill="#0f1a24"/>
   <text x="1501" y="897.09" fill="#d9d9d9" text-anchor="middle">https :443</text>
-  <line x1="2723.5" y1="296" x2="1545" y2="296" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="2723.5" y1="296" x2="1545" y2="296" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="2095.25" y="286.5" width="78" height="19" fill="#0f1a24"/>
   <text x="2134.25" y="300.9" fill="#d9d9d9" text-anchor="middle">attached</text>
-  <line x1="2723.5" y1="657.75" x2="2315.5" y2="657.75" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="2723.5" y1="657.75" x2="2315.5" y2="657.75" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="2480.5" y="648.25" width="78" height="19" fill="#16161c"/>
   <text x="2519.5" y="662.65" fill="#d9d9d9" text-anchor="middle">attached</text>
-  <line x1="2723.5" y1="956.5" x2="1717" y2="956.5" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r2b7fef2e-arrow-5c5c7c)"/>
+  <line x1="2723.5" y1="956.5" x2="1717" y2="956.5" stroke="#5c5c7c" stroke-width="1.6" stroke-dasharray="0 4.8" stroke-linecap="round" marker-end="url(#r66264893-arrow-5c5c7c)"/>
   <rect x="2181.25" y="947" width="78" height="19" fill="#0f1a24"/>
   <text x="2220.25" y="961.4" fill="#d9d9d9" text-anchor="middle">attached</text>
 </svg>

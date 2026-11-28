@@ -35,7 +35,7 @@ node project "Hetzner Cloud project agentic-workflows / [dim]fsn1, network zone 
 node project.fw "net-firewall / [dim]Hetzner firewall, on net-bastion[/dim]" (inside top, align: left)  style: firewall
 node project.fw.icon  icon: firewall  1 left of project.fw text  join-with: project.fw text
 node project.fw.wg   "in: 51820/udp / [dim]WireGuard, from anywhere[/dim]"  style: rule  min-height: 22
-node project.fw.ssh  "in: 22/tcp, icmp / [dim]from anywhere[/dim]"  style: rule  5 below project.fw.wg
+node project.fw.ssh  "in: 22/tcp, icmp / [dim]22: failsafe, 2 min after boot[/dim]"  style: rule  5 below project.fw.wg
 node project.fw.out  "out: all / [dim]NAT on the bastion[/dim]"  style: rule  5 below project.fw.ssh
 
 node project.net "net-network  10.130.0.0/16 / [dim]private, no public addresses; default route via the bastion[/dim]" (inside top, align: left)  style: network  padding-bottom: 4  padding-right: 4  padding-left: 4
